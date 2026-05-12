@@ -1,4 +1,509 @@
-Group,Code,Description,Stock,Unit,Rate,Mrp,Gst
-Demo Group,P001,Demo Product,10,PCS,100,120,18
-Demo2,P002,Demo Product,50,Box,120,150,5
-Demo3,P003,Demo Product,20,Ltr,150,170,18
+Group,Code,Description,Stock,Unit,Rate,Mrp,Gst,OE PART NUMBER
+Luman,LAC082,Ac-082 Air Cleaner Assy. 6 (Plastic) Trc.,0,PCS,1656.00,1822.00,18%,AC-082-BEND
+Luman,LAF167001,Af-167-001 Air Filter (Outer) Only E-Pro 1095Xp,0,PCS,2100.00,2250.00,18%,
+Luman,LARML1102,Arml-1102-2812 Armature Assy Hino (6Cyl),0,PCS,3330.00,0.00,18%, 
+Luman,LARML1104,Arml-1104-2661 Armature Assy. 407 N/M,0,PCS,0.00,0.00,18%, 
+Luman,LBENL1101,Benl-1101-1399 Drive Assy (Bendix) 6Bt Lp Truck,0,PCS,983.00,0.00,18%, 
+Luman,LBENL1102,Benl-1102-2815 Drive Assy.(Bendix) L/L,0,PCS,1024.00,0.00,18%, 
+Luman,LBENL1103,Benl-1103-1018 Drive Assy (Bendix) Tc-4Bt  & 6Bt,0,PCS,0.00,0.00,18%, 
+Luman,LBENL1104,Benl-1104-6097 Drive Assy (Bendix) 1210/1312/1612 Lp,0,PCS,1401.00,0.00,18%, 
+Luman,LBENL1105,Benl-1105-3397 Drive Assy (Bendix) 407/709,0,PCS,523.00,0.00,18%, 
+Luman,LBENL1106,Benl-1106-7643 Drive Assy (Bendix) 4Bt &4Btaa,0,PCS,1106.00,0.00,18%, 
+Luman,LBENL1107,Benl-1107-8286 Drive Assy (Bendix) T-Ace,0,PCS,666.00,0.00,18%, 
+Luman,LBENL1108,Benl-1108-7341 Drive Assy (Bendix) M&M,0,PCS,306.00,0.00,18%, 
+Luman,LBENL1109,Benl-1109-5621 Drive Assy (Bendix) Bolero/Mdi3200,0,PCS,729.00,0.00,18%, 
+Luman,LBENL1110,Benl-1110-5134 Drive Assy (Bendix) Indica/Super Ace,0,PCS,717.00,0.00,18%, 
+Luman,LSOLL1101,Soll-1101-0792 Solenoid Switch 6Bt Eng.,0,PCS,1385.00,0.00,18%, 
+Luman,LSOLL1102,Soll-1102-8785 Solenoid Switch 407/709,0,PCS,806.00,0.00,18%, 
+Luman,LSOLL1104,Soll-1104-4031A Solenoid Switch 407/Sumo,0,PCS,1401.00,0.00,18%, 
+Luman,LSOLL1105,Soll-1105-1556 Solenoid Switch 713&Lp Truck,0,PCS,0.00,0.00,18%, 
+Luman,LSOLL1107,Soll-1107-3011(A) Solenoid Switch 4 St (24V),0,PCS,361.00,0.00,18%, 
+Luman,LSOLL1108,Soll-1108-3003(A) Solenoid Switch 4 St(12V),0,PCS,306.00,0.00,18%, 
+Luman,LUJC001,Ujc-001 U.Joint Cross (42*129Mm) 2515/Hywa,0,PCS,1387.00,1526.00,18%,
+Luman,LUJC002,Ujc-002 U.Joint Cross 2515Ex/4018 Spicer,0,PCS,1524.00,1677.00,18%,
+Luman,LUJC003,Ujc-003 U.Joint Cross T-1109/Star Bus,0,PCS,839.00,923.00,18%,
+Luman,LUJC004,Ujc-004 U.Joint Cross T-407/Turbo,0,PCS,780.00,858.00,18%,
+Luman,LUJC005,Ujc-005 U.Joint Cross (34.91*126.10Mm) Jumbo,0,PCS,1191.00,1310.00,18%,
+Luman,LUJC006,Ujc-006 U.Joint Cross (42*119Mm) 2515,0,PCS,1277.00,1404.00,18%,
+Luman,LUJC007,Ujc-007 U.Joint Cross (41.25*126Mm) 2515 Spicer,0,PCS,1314.00,1446.00,18%,
+Luman,LUJC008,Ujc-008 U.Joint Cross Tuskar,0,PCS,969.00,1066.00,18%,
+Luman,Luman,Luman List Date : 05 / 11 / 2022,0,LIST,0.00,0.00,18%,
+Luman,LWS58,Ws-58 Water Seprator Blazo (Bs-6),0,PCS,999.00,1099.00,18%,
+Luman,LWS59,Ws-59 Water Seprator Navistar,0,PCS,853.00,938.00,18%,
+Luman Oil,L15W40CF41,15W-40 (Cf-4) Turbo Gaurd Oil 1 Ltr,0,PCS,172.00,0.00,18%, 
+Luman Oil,L85W1401,Z***Ep-85W-140 (Gl-5) Oil 1 Ltr,0,PCS,209.00,368.00,18%, 
+Luman Oil,L85W14012,Ep-85W-140 (Gl-5) Oil 12 Ltr,0,PCS,2802.00,4841.00,18%, 
+Luman Oil,L85W1405,Ep-85W-140 (Gl-5) Oil 5 Ltr,0,PCS,1024.00,1802.00,18%, 
+Luman Oil,LATFTQ1,Atf-Tq-Pwr Stg Oil 1 Ltr,0,PCS,202.00,425.00,18%, 
+Luman Oil,LATFTQ500,Atf-Tq-Pwr Stg Oil 500 Ml,0,PCS,86.00,165.00,18%, 
+Luman Oil,LEP80W901,Z***Ep-80W-90 (Gl-5) Gear Oil 1 Ltr,0,PCS,209.00,380.00,18%, 
+Luman Oil,LEP80W905,Ep-80W-90 (Gl-5) Gear Oil 5 Ltr,0,PCS,996.00,1826.00,18%, 
+Luman Oil,LEP80W907,Z***Ep-80W-90 (Gl-5) Gear Oil 7 Ltr,0,PCS,1327.00,2451.00,18%, 
+Luman Oil,LEP901,Z***Ep-90 (Gl-4) Universal Gear Oil 1 Ltr,0,PCS,209.00,380.00,18%, 
+Luman Oil,LEP905,Ep-90 (Gl-4) Universal Gear Oil 5 Ltr,0,PCS,999.00,1818.00,18%, 
+Luman Oil,LREDGEL1,Red Gel Grease (75000 Km) 1 Kg,0,PCS,352.00,578.00,18%, 
+Luman Oil,LREDGEL10,Red Gel Grease (75000 Km) 10 Kg,0,PCS,3392.00,5595.00,18%,
+Luman Oil,LREDGEL2,Red Gel Grease (75000 Km) 2 Kg,0,PCS,701.00,1151.00,18%, 
+Luman Oil,LREDGEL3,L***Red Gel Grease (75000 Km) 3 Kg,0,PCS,1048.00,1736.00,18%, 
+Luman Oil,LREDGEL5,L***Red Gel Grease (75000 Km) 5 Kg,0,PCS,1733.00,2836.00,18%, 
+Luman Oil,LREDGEL500,Red Gel Grease (75000 Km) 500 Gm,0,PCS,193.00,325.00,18%,
+Luman Oil,LREDGEL7,Red Gel Grease (75000 Km) 7 Kg,0,PCS,2414.00,3995.00,18%, 
+Luman Oil,LTG15401,Z***Turbo Guard 15W40 (Ch-4) 1 Ltr,0,PCS,199.00,385.00,18%,
+Luman Oil,LTG154015,Z***Turbo Guard 15W40 (Ch-4) 15 Ltr,0,PCS,3201.00,5678.00,18%,
+Luman Oil,LTG154075,Z***Turbo Guard 15W40 (Ch-4) 7.5Ltr,0,PCS,1419.00,2755.00,18%,
+Luman Oil,LTP15401,Z***Turbo Power 15W40 (Ci-4Plus) 1 Ltr,0,PCS,233.00,425.00,18%,
+Luman Oil,LTP154011,Z***Turbo Power 15W40 (Ci-4 Plus) 11 Ltr,0,PCS,2596.00,4388.00,18%,
+Luman Oil,LTP154015,Turbo Power 15W40 (Ci-4Plus) 15 Ltr,0,PCS,3557.00,6113.00,18%,
+Luman Oil,LTP154018,Turbo Power 15W40 (Ci-4Plus) 18 Ltr,0,PCS,4208.00,7175.00,18%,
+Luman Oil,LTP15405,Z***Turbo Power 15W40 (Ci-4Plus) 5 Ltr,0,PCS,1051.00,1835.00,18%,
+Luman Oil,LTP154075,Z***Turbo Power 15W40 (Ci-4Plus) 7.5 Ltr,0,PCS,1657.00,2941.00,18%,
+Luman Oil,LUTTO5,Utto (Wet Brake Oil) Gl-4 5 Ltr,0,PCS,984.00,1942.00,18%,
+Luman/,LAC038000,Ac-038-000 Air Cleaner Assy. (Dry Type) T-1616/2515,0,Pcs,5580.00,7366.00,18%,AC-038                         FG-AH-19427
+Luman/,LAC038024,Ac-038-024 Dust Pan T-2515,0,PCS,849.00,934.00,18%,AC-038-024
+Luman/,LAC039000,Z***Ac-039-000 Air Cleaner (Dry Type) T-1312/Tc,0,Pcs,4861.00,5347.00,18%,AC-039 / AC-054 FG-1014670
+Luman/,LAC039024,Ac-039-024 Dust Pan T-1312/1516 Tc,0,PCS,648.00,713.00,18%,AC-039-024
+Luman/,LAC046000L,Ac-046-000(L) Air Cleaner Assy. L/L 2214/Cargo,0,Pcs,4017.00,4390.00,18%,AC-046-000-L
+Luman/,LAC046000T,Ac-046-000(T) Air Filter Assy.(Dry Ty) 1109,0,Pcs,3867.00,4254.00,18%,AC-046-000-T              FG-AH-19454
+Luman/,LAC053001,Ac-053-001 Air Cleaner Assy. T-407/S-Mazda,0,Pcs,2518.00,2770.00,18%,AC-053-000
+Luman/,LAC057001,Ac-057-001 Air Cleaner Assy. L/L1613H,0,Pcs,5204.00,5724.00,18%,AC-057-001                  FG-AH-19412
+Luman/,LAC060001,Ac-060-001 Air Cleaner Assy. L/L 3516/4019,0,Pcs,6498.00,7148.00,18%,AC-060-001                    FG-AH19385
+Luman/,LAC061001,Ac-061-001 Air Cleaner Assy. L/L 2516/1616H,0,Pcs,5440.00,5984.00,18%,AC-061-001                       FG-AH19453
+Luman/,LAC061024,Ac-061-024 Dust Pan L/L 2516 N/M,0,PCS,944.00,1038.00,18%,AC-060-024
+Luman/,LAC069001,Ac-069-00-001 Air Cleaner Assy. (Air Int.Kit) L/L3118 E-3,0,Pcs,6239.00,6863.00,18%,AC-069-000-0001
+Luman/,LAC075,Ac-075 Pre-Cleaner Assy. Jcb,0,PCS,0.00,0.00,18%, 
+Luman/,LAC082001,Ac-082-001 Air Cleaner Assy. 6 (Plastic) Bend Ty. Trc.,0,PCS,1758.00,1934.00,18%,AC-082-STRAIGHT
+Luman/,LAC083,Ac-083 Air Cleaner Assy. 8 (Plastic) Trc.,0,PCS,1932.00,2125.00,18%,AC-083-STRAIGHT
+Luman/,LAC083001,Z***Ac-083-001 Air Cleaner Assy. 8 (Plastic) Bend Ty. Trc.,0,PCS,2066.00,2273.00,18%,AC-083-BEND
+Luman/,LAC57000,Ac-057-000 Air Cleaner Assy. L/L 2214,0,PCS,11761.00,12937.00,18%,AC-057-000
+Luman/,LACUT000,Ac-Ut-000 Air Cleaner Assy.L/L U-Truck / T-2518,0,Pcs,8633.00,9496.00,18%,AC-UT-000
+Luman/,LACUT001,Ac-Ut-001 Dust Pan U-Truck,0,PCS,2137.00,0.00,18%, 
+Luman/,LACUT024,Ac-Ut-024 Dust Pan For Ac-Ut-000 Pvc Assy.,0,PCS,1224.00,1347.00,18%,AC-UT-024
+Luman/,LAF046001,Af-046-001 Air Filter Prim.(Outer) T-1109/709,0,PCS,939.00,1033.00,18%,AF-046-001
+Luman/,LAF046002,Af-046-002 Air Filter Sec.(Inner) T-1109/709,0,PCS,367.00,404.00,18%,AF-046-002
+Luman/,LAF046SET,Af-046(001/002) Air Filter Set T-1109/709,0,SET,1589.00,1748.00,18%,AF-046-001/002
+Luman/,LAF053002,Af-053-002 Air Filter Sec.(Inner) S/M,0,PCS,270.00,297.00,18%,AF-053-002
+Luman/,LAF070071,Af-070-071 Air Filter Set (S.O.2) Terex Loader,0,SET,0.00,0.00,18%, 
+Luman/,LAF074,Af-074 Air Filter (Prm) Outer Jcb 3D N/M,0,PCS,562.00,0.00,18%,AF 074
+Luman/,LAF075,Af-075 Air Filter (Sec) Inner Jcb 3D N/M,0,PCS,199.00,219.00,18%,IND AF-75
+Luman/,LAF082001,Af-082-001 Air Filter (Prm) Outer John Deer (121*315Mm),0,PCS,360.00,392.00,18%,AF-082-001
+Luman/,LAF082002,Af-082-002 Air Filter (Sec) Inner John Deer (121*315Mm),0,PCS,117.00,195.00,18%,AF-082-002
+Luman/,LAF082SET,Af-082-001/002 Air Filter (S.O.2) 121*315Mm John Deer,0,SET,644.00,839.00,18%,AF-082-001/002
+Luman/,LAF083001,L***Af-083-001 Air Filter (Prm) Outer John Deer/Sonalika,0,PCS,837.00,922.00,18%,Af-083-001
+Luman/,LAF083002,Af-083-002 Air Filter (Sec) Inner JOhn Deer/Sonalika,0,PCS,208.00,229.00,18%,AF-083-002
+Luman/,LAF086001,Af-086-001 Air Filter (Prm) Outer Jcb 3Dx,0,PCS,600.00,0.00,18%,AF-086-001
+Luman/,LAF086002,Af-086-002 Air Filter (Sec) Inner Jcb 3Dx,0,PCS,120.00,0.00,18%,AF-086-002
+Luman/,LAF088001,Af-088-001 Air Filter T-207 Ex N/M-Winger,0,PCS,802.00,882.00,18%,Af-088-001
+Luman/,LAF089,Af-089 Air Filter T-Magic,0,PCS,635.00,699.00,18%,Af-089
+Luman/,LAF091001,Af-091-001 Air Filter (Prm) Outer E-2 Plus,0,PCS,1508.00,1659.00,18%,Af-091-001
+Luman/,LAF091002,Af-091-002 Air Filter (Sec) Inner E-2 Plus,0,PCS,320.00,352.00,18%,AF-091-002
+Luman/,LAF091SET,Af-091[001/002] Air Filter Set E-2 Plus,0,SET,1747.00,1922.00,18%,AF-091-001/002
+Luman/,LAF092,Af-092 Air Filter L/L Dost,0,PCS,637.00,701.00,18%,AF-092
+Luman/,LAF093001,Af-093-001 Air Filter (Outer) L/L E-Comet,0,PCS,1930.00,2123.00,18%,
+Luman/,LAF093SET,Af-093(001/002) Air Filter Set L/L E-Comet,0,SET,2404.00,2644.00,18%,AF-093-001/002
+Luman/,LAF102103,Af-102/103 Air Filter Set Cme Komatso,0,SET,3734.00,0.00,18%,IND AF-102/AF-103
+Luman/,LAF110,Af-110 Ir Filter (Sec) Inner Amw (E-3)/Mann Truck,0,PCS,536.00,590.00,18%,Af-110
+Luman/,LAF111,Af-111 Air Filter Prim. (Outer) Amw E-3/Mann Truck,0,PCS,2322.00,2554.00,18%,AF-111
+Luman/,LAF111110,Af-111/110 Air Filter Set Amw E-3/Mann Truck,0,SET,3002.00,3302.00,18%,AF-111/110
+Luman/,LAF113,Af-113-001 Air Filter T-Super Ace,0,PCS,691.00,760.00,18%,AF-113-001
+Luman/,LAF116001,Af-116-001 Air Filter Pri (Outer) T-4923 Lps,0,SET,3063.00,3370.00,18%,AF-116-001
+Luman/,LAF116002,Z***Af-116-002 Air Filter Sec (Inner) T-4923 Lps,0,SET,1227.00,1350.00,18%,AF-116-002
+Luman/,LAF116SET,Af-116-001/002 Air Filter Set (S.O.2) T-4923 Lps,0,SET,4017.00,4418.00,18%,AF-116-001/002
+Luman/,LAF118001,Af-118-001 Air Filter Spacio-Gold,0,PCS,1130.00,1243.00,18%,AF-118-001
+Luman/,LAF119001,Af-119-001 Air Filter M&M Blazo (Outer),0,PCS,2877.00,3164.00,18%,AF-119-001
+Luman/,LAF119001002,Af-119-001/002 Air Filter Set (S.O.2) M&M Blazo,0,SET,3543.00,3898.00,18%,AF-119-001/002
+Luman/,LAF119002,Z***Af-119-002 Air Filter Sec.(Inner) Blazo,0,PCS,710.00,781.00,18%,AF-119-002
+Luman/,LAF120001,Z***Af-120-001 Air Filter Prim.(Outer) T-Prima,0,PCS,4235.00,4658.00,18%,AF-120-001
+Luman/,LAF120001002,Af-120-001/002 Air Filter Set (S.O.2) T-Prima 4040S,0,SET,5857.00,6442.00,18%,AF-120-001/002
+Luman/,LAF121,Af-121 Air Filter Scorpio/Bolero,0,PCS,363.00,399.00,18%,Af-121
+Luman/,LAF125SET,Af-125-001/002 Air Filter Set B-Benz 912/712/1214,0,SET,2618.00,2880.00,18%,AF-125-001/002
+Luman/,LAF126001,Af-126-001 Air Filter (Outer) 1109/909 Ultra,0,PCS,2619.00,2881.00,18%,AF-126 001
+Luman/,LAF126SET,Af-126-001/002 Air Filter Set T-1109/909 Ultra,0,SET,3072.00,3379.00,18%,AF-126 001/002
+Luman/,LAF129SET,129 -001/002 Air Filter Set L/L 12Mm Bus,0,PCS,3999.00,4399.00,18%,AF-129-001/002
+Luman/,LAF131001,Af-131-001 Air Filter (Outer) Only L/L Guru,0,PCS,2045.00,2250.00,18%,
+Luman/,LAF131SET,Af-131-001/002 Air Filter Set (S.O.2) L/L Guru (Bs-4),0,SET,2760.00,3036.00,18%,
+Luman/,LAF138001,Af-138-001 Air Filter (Outer) Prm. (H),0,PCS,1860.00,2047.00,18%,AF-038-001
+Luman/,LAF138SET,Af-138-001/002 Air Filter Set (S.O.2) (H),0,SET,2324.00,2556.00,18%,AF-038-001-002
+Luman/,LAF139001TR,Af-139-001-Tr Air Filter Prm. (Outer) Tc,0,PCS,1744.00,1918.00,18%,AF-039-001
+Luman/,LAF139002TR,L***Af-139-002-Tr Air Fiter Sec (Inner) Tc,0,PCS,512.00,563.00,18%,AF-039-002
+Luman/,LAF139SETTR,Af-139-001/002 (Tr) Air Filter Set (Prm/Sec) Tc,0,SET,2296.00,2526.00,18%,AF-039-001-002
+Luman/,LAF145SET,Af-145-001/002 Air Filter Set Atlas Copco 186 Cb,0,SET,0.00,0.00,18%, 
+Luman/,LAF150001,Af-150-001 Air Filter T-Iris-Zip/Iris-Magic,0,PCS,396.00,436.00,18%,
+Luman/,LAF152001,Af-152-001 Air Filter Prm.(Outer) (H),0,PCS,1339.00,1473.00,18%,AF-052-001
+Luman/,LAF152SET,Af-152-001/002 Air Filter Set (S.O.2) (H),0,SET,1903.00,2094.00,18%,AF-052-001/002
+Luman/,LAF153001,L***Af-153-001 Air Filter Pri (Outer) S/M,0,PCS,756.00,831.00,18%,AF-053-001
+Luman/,LAF153SET,Af-153-001/002 Air Filter Set (S.O.2) (L),0,SET,932.00,1026.00,18%,AF-053-001/002
+Luman/,LAF166001,Af-166-001 Air Filter (Outer) Pro-5016/6042,0,PCS,2251.00,2385.00,18%,
+Luman/,LAF166SET,Af-166-001/002 Air Filter (S.O.2) Pro 5016/6042,0,SET,2926.00,3219.00,18%,AF-166-001/002
+Luman/,LAF167SET,Af-167-001/002 Air Filter (S.O.2) Pro 1050/1095Xp,0,SET,2576.00,2834.00,18%,AF-167-001/002
+Luman/,LAF171,Af-171 Air Filter Maximo,0,PCS,302.00,332.00,18%,
+Luman/,LAF178SET,Af-178-001/002 Air Filter Set 14 Eng. (1200 Ser.) M&M,0,SET,3595.00,3954.00,18%,
+Luman/,LAF181SET,*** See In Laf215Set***Af-181-001/002 Air Filter Set (S.O.2) 14-Eng.1200,0,SET,4076.00,4484.00,18%,
+Luman/,LAF186SET,Af-186/001/002 Air Filter Set (S.O.2) U-Truck T-2518 (Bs-3),0,SET,4106.00,4516.00,18%,
+Luman/,LAF191SET,L***Af-191-001/002 Air Filter Set (S.O.2) B-Benz (Bs-6),0,SET,4238.00,4662.00,18%,
+Luman/,LAF215SET,Af-215-001/002 Air Filter Set (S.O.2) Man Truck,0,SET,3097.00,3906.00,18%,
+Luman/,LAF40SET,Z***040/001-002 Air Filter Set (S.O.2) L/L 2516 (Gold),0,SET,2059.00,2265.00,18%,
+Luman/,LAF41SET,041/001-002 Air Filter Set (S.O.2) Tc 6Bt/2214 L/L (Gold),0,SET,1937.00,2131.00,18%,
+Luman/,LAF7475,Af-074/075 Air Filter Set (S.O.2) Jcb 3D,0,SET,735.00,809.00,18%,AF074/AF075
+Luman/,LAF83001002,M***Af-083-001/002 (Tr) Air Filter Set (S.O.2) John Deer (315Mm),0,SET,1052.00,1316.00,18%,AF-083-001/002
+Luman/,LAF86SET,M***Af-086-001/002 Air Filter Set (S.O.2) 3Dx,0,SET,813.00,894.00,18%,AF-086-001/002
+Luman/,LAF87001002,Af-087-001/002 Air Filter Set T-410/Sfc (E-3),0,PCS,2213.00,2435.00,18%,AF-087-001/002
+Luman/,LAF94,Af-94 Air Filter Swaraj 855,0,PCS,133.00,146.00,18%,AF-94
+Luman/,LAF95,Af-95 Air Filter Mahindra Di,0,PCS,119.00,131.00,18%,AF-95
+Luman/,LAF97,Af-097 Air Filter Outer Amw Tipper,0,PCS,2534.00,0.00,18%, 
+Luman/,LAF9796SET,Af-97(P)/96(S) Air Filter Set Amw Tipper,0,SET,4772.00,5249.00,18%,AF-97 (P)/96 (S)
+Luman/,LAF98S99P,Z***Af-98(S)99(P) Air Filter Set Mann/Tipper,0,SET,4852.00,5337.00,18%,AF-98 (S)/99(P)
+Luman/,LAFCA1002,AF-CA-1002 Air Filter (Type-3) Swift/Ertiga (Ptl),0,PCS,220.67,278.00,18%, 
+Luman/,LAFCA1003,AF-CA-1003 Air Filter I-20 Elite (Ptl)/(Dsl),0,PCS,263.00,313.00,18%, 
+Luman/,LAFCA1004,AF-CA-1004 Air Filter Inno-Va / Fortu-Ner (Dsl),0,PCS,644.10,856.00,18%, 
+Luman/,LAFCA1006,AF-CA-1006 Air Filter Micra/ Sun-Ny/ Dust-Er (85 Bhp)/ Logan/ Verito (Dsl),0,PCS,373.23,477.00,18%, 
+Luman/,LAFCA1008,AF-CA-1008 Air Filter (Type 3) Dust-Er/Lod-Gy- (Dsl),0,PCS,333.63,443.00,18%, 
+Luman/,LAFCA1009,AF-CA-1009 Air Filter Fiesta/ Figo- (Dsl),0,PCS,262.00,340.00,18%, 
+Luman/,LAFCA1010,AF-CA-1010 Air Filter Amaze/Mobilo/City- (Dsl),0,PCS,307.00,370.00,18%, 
+Luman/,LAFCA1011,AF-CA-1011 Air Filter (Type-5) City/B-Rio/Jazz/Amaze (Ptl),0,PCS,402.00,475.00,18%, 
+Luman/,LAFCA1012,AF-CA-1012 Air Filter Etios/Liva (Dsl),0,PCS,205.00,255.34,18%, 
+Luman/,LAFCA1013,L***Af-Ca-1013 Air Filter Bolero Dsl.,0,PCS,316.00,412.00,18%,AF-CA- 1013
+Luman/,LAFCA1016,AF-CA-1016 Air Filter Ver-Na Crdi (Dsl),0,PCS,352.64,430.00,18%, 
+Luman/,LAFCA1017,AF-CA-1017 Air Filter Fludic Ver-Na/Elan-Tra Flu-Dic (Dsl),0,PCS,325.71,397.00,18%, 
+Luman/,LAFCA1018,AF-CA-1018 Air Filter E-Eco/ Versa,0,PCS,225.00,286.00,18%, 
+Luman/,LAFCA1022,AF-CA-1022 Air Filter Alto/ W/R/ Zen Estilo,0,PCS,169.98,203.00,18%, 
+Luman/,LAFCA1024,AF-CA-1024 Air Filter Estilo K Series/ Alto K-10,0,PCS,179.00,219.00,18%, 
+Luman/,LAFCA1028,AF-CA-1028 Air Filter Sx4 (Ptl),0,PCS,231.76,272.00,18%, 
+Luman/,LAFCA1030,AF-CA-1030 Air Filter Swift (Ptl),0,PCS,316.21,413.00,18%, 
+Luman/,LAFCA1033,AF-CA-1033 Air Filter I-10,0,PCS,175.00,209.69,18%, 
+Luman/,LAFCA1036,AF-CA-1036 Air Filter San-Tro Lpg,0,PCS,234.93,302.00,18%, 
+Luman/,LAFCA1049,AF-CA-1049 Air Filter Air Molded Frame Filter Bea-T (Ptl),0,PCS,258.69,317.00,18%, 
+Luman/,LAFCA1067,AF-CA-1067 Air Filter L/M New Swift-D (Dsl),0,PCS,235.00,282.00,18%, 
+Luman/,LAFCA1083,AF-CA-1083 Air Filter Air Molded Frame Filter San-Tro Lpg,0,PCS,226.00,298.00,18%, 
+Luman/,LAFCA1085,AF-CA-1085 Air Filter Indigo (Dsl),0,PCS,230.00,310.00,18%, 
+Luman/,LAFCA1086,AF-CA-1086 Air Filter Piaggio Ape (E-2),0,PCS,152.56,274.00,18%, 
+Luman/,LAFCA1087,AF-CA-1087 Air Filter Van,0,PCS,253.94,352.00,18%, 
+Luman/,LAFCA1088,AF-CA-1088 Air Filter Ace Magic Pu,0,PCS,827.00,910.00,18%, 
+Luman/,LAFCA1089,Af-Ca-1089 Air Filter T-Yodha/Hexa/Xenon/Safari,0,PCS,345.00,530.00,18%,
+Luman/,LAFCA1090,Af-Ca-1090 Air Filter Bolero F/C (2Nd Gen) Maxi Truck,0,PCS,470.00,517.00,18%,
+Luman/,LAFPT001002,Af-Pt-001/002 Air Filter Set T-Prima,0,SET,5566.00,6123.00,18%,Af-Pt-001/002
+Luman/,LAFUT001,M***Af-Ut-001 Air Filter Prim.(Outer) L/L-U-Truck,0,PCS,2877.00,3164.00,18%,Af-Ut-001
+Luman/,LAFUT001002,M***Af-Ut-001/002 Air Filter Set L/L-U-Truck,0,SET,4048.00,4453.00,18%,AF-UT-001 & 002
+Luman/,LAFUT002,Af-Ut-002 Air Filter Sec.(Inner) L/L-U-Truck,0,PCS,1143.00,1257.00,18%,Af-Ut-002
+Luman/,LAS2400,L***As-2400 Air Oil Saptrator,0,PCS,1024.00,1127.00,18%,AS2400
+Luman/,LCFCA4001,CF-CA-4001 Cabin Filter Eco-Sport,0,PCS,311.46,462.00,18%, 
+Luman/,LCFCA4002,CF-CA-4002 Cabin Filter Mic-Ra/Su-Nny,0,PCS,374.82,493.00,18%, 
+Luman/,LCFCA4003,CF-CA-4003 Cabin Filter Skoda/Laura/Jetta/Super-B,0,PCS,572.82,739.00,18%, 
+Luman/,LCFCA4004,CF-CA-4004 Cabin Filter Skoda/Po-Lo/Ven-To/Fabia/Ra-Pid,0,PCS,336.80,466.00,18%, 
+Luman/,LCFCA4005,Cf-Ca-4005 Cabin Filter Innova,0,PCS,312.00,434.00,18%,CF-CA-4005
+Luman/,LCFCA4006,CF-CA-4006 Cabin Filter City,0,PCS,542.72,668.00,18%, 
+Luman/,LCFCA4007,CF-CA-4007 Cabin Filter Skoda Octavia,0,PCS,485.70,597.00,18%, 
+Luman/,LCFCA4011,CF-CA-4011 Cabin Filter Etios,0,PCS,215.92,265.00,18%, 
+Luman/,LCFCA4012,Cf-Ca-4012 Cabin Filter Beat,0,PCS,292.00,358.00,18%, 
+Luman/,LCFCA4013,CF-CA-4013 Cabin Filter Alto K-10/Alto 800,0,PCS,227.01,295.00,18%, 
+Luman/,LCFCA4014,Cf-Ca-4014 Cabin Filter Swift 2015 Modal,0,PCS,234.00,309.00,18%,CF-CA-4014
+Luman/,LCFCA4015,CF-CA-4015 Cabin Filter Scorpio,0,PCS,441.34,567.00,18%, 
+Luman/,LCFCA4016,CF-CA-4016 Cabin Filter Logan/Verito,0,PCS,261.86,371.00,18%, 
+Luman/,LCFCA4017,Cf-Ca-4017 Cabin Filter Terrano/Duster,0,PCS,380.00,527.00,18%,CF-CA-4017
+Luman/,LCFCA4018,CF-CA-4018 Cabin Filter Estilo/W/R /A-Star,0,PCS,332.05,486.00,18%, 
+Luman/,LCFCA4019,Cf-Ca-4019 Cabin Filter Swift/Sx-4/Ertiga,0,PCS,269.00,352.00,18%,CF-CA-4019
+Luman/,LCFCA4020,CF-CA-4020 Cabin Filter Kwi-D,0,PCS,306.70,378.00,18%, 
+Luman/,LCFCA4021,CF-CA-4021 Cabin Filter Datsun Go,0,PCS,294.03,362.00,18%, 
+Luman/,LCFCA4022,Cf-Ca-4022 Cabin Filter Cre-Ta,0,PCS,326.00,406.00,18%,CF-CA-4022
+Luman/,LCS005L,Cs-005(L) Combination Switch L/L N/M & Cargo,0,PCS,462.00,508.00,18%,CS-005L
+Luman/,LCS005T,Cs-005(T) Combination Switch (9 Wire) Tata,0,PCS,457.00,503.00,18%,CS-005T
+Luman/,LCS014,L***Cs-014 Combination Switch (13 Wire Ty.),0,PCS,732.00,805.00,18%,CS-014
+Luman/,LCS015L,Cs-015(L) Combination Switch (W/2 Speed Wiper) L/L N/M,0,PCS,821.00,903.00,18%,CS-015
+Luman/,LCS016T,Cs-016(T) Combination Switch T-1613,0,PCS,462.00,508.00,18%,CS-016T
+Luman/,LCS020L,Z***Cs-020-L Double Combination Switch U-Truck,0,PCS,2620.00,2828.00,18%,CS-20L
+Luman/,LDF117KIT,Df-117(Kit) Dsl. Filter (Cav Type) Set (S.O.2),0,SET,219.00,241.00,18%,DF-117-KIT
+Luman/,LDF117TR,Df-117-Tr Dsl Filter Cav Type,0,PCS,140.00,154.00,18%,DF-117
+Luman/,LDF165,DF-165 Filter Gypsy,0,PCS,162.00,177.00,18%, 
+Luman/,LFEXTC001,Fex-Tc-001 Fuel Filter (With Drain Plug) Small Nut T-2515Ex,0,PCS,458.00,504.00,18%,FEX-TC-001 with drain plug
+Luman/,LFF102,FF-102 Fuel Filter Alto/ W/R,0,PCS,216.00,257.00,18%, 
+Luman/,LFF103,FF-103 Fuel Filter 800 (Mpfi),0,PCS,220.00,253.00,18%, 
+Luman/,LFF110,M***Ff-110 Fuel Filter 6B/T-3118,0,PCS,1539.00,1693.00,18%,FF-110
+Luman/,LFF111,Ff-111 Fuel Filter M&M Max Force,0,PCS,752.00,827.00,18%,FF-111
+Luman/,LFF113,L***Ff-113 Fuel Filter (Dsl) M&M Bolero Zxl/N/M,0,PCS,504.00,554.00,18%,FF-113
+Luman/,LFF116,Ff-116 Fuel Filter Eicher Hd (Bs-3),0,PCS,1119.00,1230.00,18%,FF-116
+Luman/,LFF119,L***Ff-119 Fuel Filter Neptune Eng.L/L,0,PCS,1691.00,1860.00,18%,FF-119
+Luman/,LFF121,M***Ff-121 Fuel Filter Artridger B-Benz 1613/3116,0,PCS,737.00,811.00,18%,FF-121
+Luman/,LFF122,Ff-122 Fuel Filter Cb18 Fip (Crs Eng.) L/L,0,PCS,524.00,635.00,18%,FF-122
+Luman/,LFF123,M***Ff-123 Fuel Filter Cummins B-5 Ing.,0,PCS,1520.00,1672.00,18%,FF-123
+Luman/,LFF124,M***Ff-124 Fuel Filter Daimler/B-Benz,0,PCS,998.00,1098.00,18%,FF-124
+Luman/,LFF130,Ff-130 Fuel Filter Cartridge Daimler B-Benz,0,PCS,833.00,917.00,18%,FF-130
+Luman/,LFF138,Ff-138 Fuel Filter Eicher Pro-5000,0,PCS,1653.00,1818.00,18%,
+Luman/,LFF144,L***Ff-144 Fuel Filter (Bs-6) Tc Isbe Eng.,0,PCS,1516.00,1668.00,18%,FF-144
+Luman/,LFF145,Ff-145 Fuel Filter 2515/4018 (Bs-4),0,PCS,2570.00,2827.00,18%,FF-145
+Luman/,LFF146,Ff-146 Fuel Water Sap.(Bs-4) Tata Catrigde,0,PCS,3350.00,3685.00,18%,FF-146
+Luman/,LFF149,Ff-149 Fuel Filter Eicher,0,PCS,1161.00,1277.00,18%,FF-149*
+Luman/,LFF158,Ff-158 Fuel Filter (Yellow) T-1109 Ultra (Pre),0,PCS,1242.00,1366.00,18%,FF-158*
+Luman/,LFF159,Ff-159 Fuel Filter (Gray) T-1109 Ultra (Pre),0,PCS,968.00,1065.00,18%,FF-159*
+Luman/,LFF81,Ff-81 Fuel Filter,0,PCS,0.00,0.00,18%,FF-81
+Luman/,LFF82,Ff-82 Fuel Filter Cartridge Cummins Gen,0,PCS,465.00,0.00,18%,FF-82
+Luman/,LFFCA3001,Ff-Ca-3001 Dsl Filter Scorpio/Swift Dsl,0,PCS,742.00,833.00,18%,FF- CA- 3001
+Luman/,LFFCA3004,FF-CA-3004 Fuel Filter Inno-Va/ Fortuner (Dsl),0,PCS,282.00,347.76,18%, 
+Luman/,LFFCA3005,Ff-Ca-3005 Fuel Filter Cre-Ta Dsl,0,PCS,638.00,827.00,18%,FF- CA- 3005
+Luman/,LFFCA3008,FF-CA-3008 Fuel Filter Dust-Er/Mic-Ra/ Sun-Ny/ Logan (Dsl),0,PCS,970.00,1179.00,18%, 
+Luman/,LFFCA3010,FF-CA-3010 Fuel Filter Brezza (Dsl),0,PCS,583.20,809.00,18%, 
+Luman/,LFFCA3014,FF-CA-3014 Fuel Filter Etios (Dsl),0,PCS,232.00,269.00,18%, 
+Luman/,LFFCA3015,Ff-Ca-3015 Fuel Filter Bolero (M2Di) 407 (Dsl),0,PCS,258.00,307.00,18%, 
+Luman/,LFFCA3016,FF-CA-3016 Fuel Filter Po-Lo/ Vento/ Rapid/ Fabia (Dsl),0,PCS,1000.00,1223.00,18%, 
+Luman/,LFFCA3017,Ff-Ca-3017 Fuel Filter Ver-Na Dsl,0,PCS,638.00,808.00,18%,FF- CA- 3017
+Luman/,LFFCA3019,Ff-Ca-3019 Fuel Filter Maxximo,0,PCS,208.00,263.00,18%,FF- CA- 3019
+Luman/,LFFCA3020,Ff-Ca-3020 Fuel Filter M&M Bolero N/M,0,Pcs,486.00,567.00,18%,FF- CA- 3020
+Luman/,LFFCA3021,Ff-Ca-3021 Fuel Filter (3 Pipe) Safari Dicor,0,PCS,1201.00,1484.00,18%,FF- CA- 3021
+Luman/,LFFCA3022,L***Ff-Ca-3022 Fuel Filter (2 Pipe) Safari,0,PCS,815.00,1011.00,18%,FF- CA- 3022
+Luman/,LFFCA3023,FF-CA-3023 Fuel Filter Baleno/Swift Dzire/Ignis/Bea-T,0,PCS,413.00,522.00,18%, 
+Luman/,LFFCA3025,Ff-Ca-3025 Fuel Filter Ace Dicor,0,PCS,389.00,542.00,18%, 
+Luman/,LFFCA3026,L***Ff-Ca-3026 Fuel Filter Ertiga (Dsl),0,PCS,685.00,849.00,18%,FF-CA-3026
+Luman/,LFFCA3027,Ff-Ca-3027 Fuel Filter Supro/Jeeto,0,PCS,660.00,726.00,18%,
+Luman/,LFFCA3028,Ff-Ca-3028 Fuel Filter Bolero/Marazzo/Xuv-300/700,0,PCS,574.00,631.00,18%,
+Luman/,LFFCA3051,FF-CA-3051 Fuel Filter Bolt,0,PCS,888.00,1019.00,18%, 
+Luman/,LFFL002,Ffl-002 Electronic Flasher (24V) Ley.,0,PCS,145.00,159.00,18%,FFL-002
+Luman/,LFFPT001,Ff-Pt-001 Fuel Filter T-Prima (Isbe Eng.),0,PCS,1339.00,1473.00,18%,FF-PT-001
+Luman/,LFFTC002,L***Ff-Tc-002 Fuel Filter Small Tc.,0,PCS,301.00,331.00,18%,FF-TC-002
+Luman/,LFFTR001,Z***Ff-Tr-001 Dsl.Filter Small 0.5 Ltr Only Cloth Ty.,0,PCS,115.00,165.00,18%,FF-TR-001
+Luman/,LFFTR002,Ff-Tr-002 0.5Ltr Only Paper Dsl. Filter,0,PCS,115.00,162.00,18%,FF-TR-002
+Luman/,LFFTR003,Ff-Tr-003 Fuel Filter (0.5 Ltr) Small Coil Type,0,PCS,83.00,120.00,18%,FF-TR-003
+Luman/,LFFTR004,L***Ff-Tr-004 Dsl.Filter (1.1 Ltr) Big Single,0,PCS,93.00,132.00,18%,FF-T-001/ FF-TR-004
+Luman/,LFFTR005,Ff-Tr-005 Dsl Filter Big (Only Cloth),0,PCS,140.00,189.00,18%,FF-TR-005
+Luman/,LFFTR006,Ff-Tr-006 Fuel Filter (Coil Ty.) Small,0,PCS,135.21,184.00,18%,FF-T-003/ FF-TR-006
+Luman/,LFFUT001,Ff-Ut-001 Fuel Filter (Main Filter Insert) L/L Crs,0,PCS,1332.00,1465.00,18%,FF-UT-001
+Luman/,LFL312A,Fl-312(A) Front Signls Light (Left) Hino N/M,0,PCS,349.00,384.00,18%,FI-312-A
+Luman/,LFL313A,Fl-313(A) Front Signls Light (Right) Hino N/M,0,PCS,349.00,384.00,18%,FI-313-A
+Luman/,LHL121CL,Hl-121(Cl) Head Lamp Assy.(Clear Lens) Left 1612,0,PCS,748.00,822.00,18%,HL-121-CL-DC
+Luman/,LHL121DC,Hl-121 Head Lemp Assy.(Diamond Cut) Left 1612,0,PCS,748.00,822.00,18%,HL-121 AP-HL-121
+Luman/,LHL121LED,Hl-121 (Led) Head Light Assy.(Left) 1612 Led Type,0,PCS,1233.00,1356.00,18%,HL-121-CL-LED
+Luman/,LHL122CL,Hl-122(Cl) Head Lamp Assy. (Clear Lens) Right 1612,0,PCS,748.00,822.00,18%,HL-122-CL-DC
+Luman/,LHL122DC,Hl-122 Head Lemp Assy.(Diamond Cut) Right 1612,0,PCS,748.00,822.00,18%,HL-122 AP-HL-121
+Luman/,LHL122LED,Hl-122 (Led) Head Light Assy.(Right) 1612 Led Type,0,PCS,1233.00,1356.00,18%,HL-122-CL-LED
+Luman/,LHL125,Hl-125 Head Lamp Assy (Left) 2416/Jumbo,0,PCS,649.00,714.00,18%,HL-125
+Luman/,LHL126,Hl-126 Head Lamp Assy (Right) 2416/Jumbo,0,PCS,649.00,714.00,18%,HL-126
+Luman/,LHL306,Hl-306 F.Di Light (Left) Stalion Cargo,0,PCS,228.00,250.00,18%,HL-306 / HL-307C
+Luman/,LHL306A,Hl-306(A) F.Di Light (Right) Station Cargo,0,PCS,228.00,250.00,18%,HL-306-A / HL-308-C
+Luman/,LHL307A,Hl-307(A) Head Lamp Assy (Left) Cargo N/M,0,PCS,619.00,681.00,18%,HL-307 / HL-307-A
+Luman/,LHL308A,Hl-308(A) Head Lamp Assy (Right) Cargo N/M,0,PCS,619.00,681.00,18%,HL-308 / HL-308-A
+Luman/,LHS008,Hs-008 Head Light Switch Ley.,0,PCS,164.00,181.00,18%,HS-008
+Luman/,LIS007,Is-007-100/Ms-18 Ignition Switch Cargo,0,PCS,173.00,190.00,18%,IS-007-100
+Luman/,LIS035A,Is-035(A) Battery Isolator Switch (24V) Tata/L/L,0,PCS,872.00,959.00,18%,IS-035A
+Luman/,LIS036,Is-036 Battery Isolator Switch (Small) Tata/Mazda,0,PCS,698.00,768.00,18%,IS-036
+Luman/,LKITBB001,Kit-Bb-001 Filter Kit (S.O.3) B-Benz,0,SET,2553.00,2809.00,18%,KIT-BB-001
+Luman/,LKITBB002,Kit-Bb-002 Filter Kit B-Benz 914/1214,0,PCS,2660.00,2927.00,18%,KIT-BB-002*
+Luman/,LKITEXT001,M***Kit-Ext-001 Oil Filter Dsl Filter Kit (S.O.3) T-Ex,0,SET,1067.00,1174.00,18%,KIT-EXT-001 WITH DRAIN PLUG
+Luman/,LKITEXT002,Kit-Ext-002 Diesel Filter Set (S.O.2) T-Ex,0,SET,747.00,821.00,18%,KIT- EXT -002 with drain plug
+Luman/,LKITJCB,Kit-Jcb Filter Kit (S.O.4) Jcb 3D,0,PCS,660.00,0.00,18%,Kit-JCB
+Luman/,LKITT002,Kit-T-002 Filter Kit (S.O.3) Tata,0,SET,476.00,523.00,18%,KIT-T-002
+Luman/,LKITT003,Kit-T-003 Filter Kit (S.O.3) T-407,0,SET,281.00,309.00,18%,Kit-T-003
+Luman/,LKITTC002,Z***Kit-Tc-002 (Of-Pt-001 & Ws-04T-S) Filter Kit,0,SET,2333.00,2566.00,18%,KIT-TC-002
+Luman/,LKITTR001,Kit-Tr-001 Dsl Filter Set Small (0.5 Ltr),0,SET,202.00,232.00,18%,Kit-TR-001
+Luman/,LKITTR003,Kit-Tr-003 Diesel Filter Set Small (Coil Ty),0,PCS,193.00,222.00,18%,Kit-TR-002
+Luman/,LKITTR004,Kit-Tr-004 Dsl Filter Set Big (1.1 Ltr),0,SET,251.00,285.00,18%,Kit-TR-003
+Luman/,LKITTR005,Kit-Tr-005 Dsl Filter Set Big (Coil+Cloth),0,SET,217.00,250.00,18%,Kit-TR-004
+Luman/,LKITTR006,L***Kit-Tr-006 Dsl Filter Set (Coil Type) Big 1.1 Ltr,0,SET,248.00,385.00,18%,Kit-TR-005
+Luman/,LKITTR007,Kit-Tr-007 Dsl Filter Big Paper/Parer (S.O.2),0,SET,239.00,263.00,18%,Kit-TR-006
+Luman/,LKITTR008,Kit-Tr-008 Dsl Filter Set Small (S.O.2) (Paper/Paper),0,SET,176.00,202.00,18%,Kit-TR-007
+Luman/,LOF073,Of-073 Oil Filter (Big) Jcb 3D N/M,0,PCS,360.00,396.00,18%,OF 073
+Luman/,LOF104,Of-104 Oil Filter T-207/410,0,PCS,452.00,497.00,18%,OF-104
+Luman/,LOF108,Of-108 Oil Filter Tata Ace/T-Indica,0,PCS,186.00,205.00,18%,OF-108
+Luman/,LOF111,Of-111 Oil Filter M&M Inter Di,0,PCS,237.00,263.00,18%,Kit-TR-008
+Luman/,LOF113,Of-113 Oil Filter T-709/1109 (E-3),0,PCS,478.00,526.00,18%,OF-113
+Luman/,LOF124,Of-124 Oil Filter (By Pass) Canter,0,PCS,286.00,315.00,18%,OF-124
+Luman/,LOF125,Z***Of-125 Oil Filter S/Mazda,0,PCS,366.00,402.00,18%,OF-125
+Luman/,LOF130,L***Of-130 Oil Filter L/L Dost,0,PCS,255.00,281.00,18%,OF-130
+Luman/,LOF131,Of-131 Oil Filter Jumbo/ Galaxy,0,PCS,341.00,375.00,18%,OF-131
+Luman/,LOF132,Of-132 Oil Filter T-Xenon/Sumo Grande,0,PCS,240.00,264.00,18%,OF-132
+Luman/,LOF137,Of-137 Oil Filter Canter/Sumo Grand,0,PCS,161.00,177.00,18%,OF-137
+Luman/,LOF138,Of-138 Oil Filter Tata 697 Eng. (Euro-4),0,PCS,2563.00,2819.00,18%,OF-138
+Luman/,LOF142,Of-142 Oil Filter T-207Di/Victa,0,PCS,120.00,132.00,18%,OF-142
+Luman/,LOF146,Of-146 Oil Filter M&M Nevy Force,0,PCS,742.00,816.00,18%,OF-146
+Luman/,LOF148,M***Of-148 Oil Filter (Small Height) U-Truck,0,PCS,721.00,844.00,18%,OF-148
+Luman/,LOF151,Z***Of-151 Oil Filter T-Novos Cumins Eng.,0,PCS,2100.00,2310.00,18%,OF-151
+Luman/,LOF152,Of-152 Oil Filter Cummins,0,PCS,1329.00,1462.00,18%,
+Luman/,LOF156,M***Of-156 Oil Filter B-Benz 1613/3116,0,PCS,771.00,848.00,18%,OF-152
+Luman/,LOF159,Of-159 Oil Filter Cumins,0,PCS,1655.00,1821.00,18%,OF-159
+Luman/,LOF160,Of-160 Oil Filter Daimler B-Benz,0,PCS,602.00,662.00,18%,OF-160
+Luman/,LOF170,Of-170 Oil Filter M&M Max Force,0,PCS,1111.00,1223.00,18%,OF-170
+Luman/,LOF171,Of-171 Oil Filter Case,0,PCS,630.00,693.00,18%,OF-171
+Luman/,LOF175,Of-175 Oil Filter T-Ultra Bus (Bs-5),0,PCS,1143.00,1257.00,18%,OF-175
+Luman/,LOF184,Of-184 Oil Filter Eicher Pro 5000,0,PCS,1446.00,1591.00,18%,OF-184
+Luman/,LOF194,Of-194 Oil Filter (Insert) Eicher,0,PCS,934.00,1028.00,18%,
+Luman/,LOF195,Of-195 Oil Filter Eicher Pro 1000 Ser.,0,PCS,1639.00,1803.00,18%,OF-195
+Luman/,LOF219,Of-219 Oil Filter L/L Dost (Bs-6),0,PCS,276.00,307.00,18%,
+Luman/,LOF290,Of-290 Oil Filter Prima/Signa 2518,0,PCS,1938.00,2132.00,18%,OF-290*
+Luman/,LOF310,Z***Of-310 Oil Filter Sumo Grande/Xenon,0,PCS,357.00,393.00,18%,
+Luman/,LOF59,L***Of-59 Oil Filter Peugeot,0,PCS,219.00,241.00,18%,OF-59
+Luman/,LOF82,Of-82 Lube Filter (Oil Filter) 125 Kva Gen Set Cummins,0,PCS,385.00,0.00,18%,IND OF-82
+Luman/,LOF83,L***Z***Of-83 Lube Filter (By-Pass) 500 Kva Gen Set,0,PCS,734.00,776.00,18%,OF-83
+Luman/,LOF85,Of-85 Oil Filter T-407,0,PCS,158.00,174.00,18%,OF-85
+Luman/,LOF86,M***Of-086 Oil Filter T-2515 Turbo Long,0,PCS,639.00,703.00,18%,OF-086
+Luman/,LOFCA2001,OF-CA-2001 Oil Filter Swift/ Dezire/Sx4/ Ritz/ Eritga (Dsl),0,PCS,149.39,205.00,18%, 
+Luman/,LOFCA2002,OF-CA-2002 Oil Filter (Mpfi),0,PCS,151.00,164.00,18%, 
+Luman/,LOFCA2003,OF-CA-2003 Oil Filter I-20 Elite/ Cre-Ta/ Ver-Na Fludic (Dsl),0,PCS,348.48,425.00,18%, 
+Luman/,LOFCA2004,Of-Ca-2004 Oil Filter Innova Dsl,0,PCS,187.00,230.00,18%,OF - CA- 2004
+Luman/,LOFCA2006,OF-CA-2006 Oil Filter Dust-Er/ Logan/ Verito/ Mic-Ra/ Su-Nny (Dsl),0,PCS,203.00,266.00,18%, 
+Luman/,LOFCA2007,OF-CA-2007 Oil Filter Vento/ Rapid/ Superb/Laura/ Octavia (Dsl),0,PCS,544.00,590.00,18%, 
+Luman/,LOFCA2010,OF-CA-2010 Oil Filter Amaze/City (Idtech) (Dsl),0,PCS,196.91,262.00,18%, 
+Luman/,LOFCA2011,OF-CA-2011 Oil Filter (Type-5) City / Iv-Tech/ Brio/ Amaze/ (Ptl),0,PCS,194.00,261.00,18%, 
+Luman/,LOFCA2012,OF-CA-2012 Oil Filter Etios/Altis (Dsl),0,PCS,224.00,279.00,18%, 
+Luman/,LOFCA2013,OF-CA-2013 Oil Filter Bolero (Dsl),0,PCS,194.80,221.00,18%, 
+Luman/,LOFCA2014,L***Of-Ca-2014 Oil Filter Scorpio (Crde) (Dsl),0,PCS,202.00,254.00,18%, 
+Luman/,LOFCA2015,Of-Ca-2015 Oil Filter Po-Lo/Fabia (Dsl),0,PCS,399.00,435.00,18%, 
+Luman/,LOFCA2016,OF-CA-2016 Oil Filter Ver-Na (Crdi) (Dsl),0,PCS,417.58,498.00,18%, 
+Luman/,LOFCA2017,OF-CA-2017 Oil Filter San-Tro Xing/ Creta /I-10 Grand/E-On(Ptl),0,PCS,168.00,184.00,18%, 
+Luman/,LOFCA2018,OF-CA-2018 Oil Filter Estilo (K) (Series)/Alto K-10/ Alto 800/ W/R (K) (Series),0,PCS,165.00,177.00,18%, 
+Luman/,LOFCA2021,OF-CA-2021 Oil Filter Indigo,0,PCS,198.00,264.00,18%, 
+Luman/,LOFCA2022,OF-CA-2022 Oil Filter K-Wid (Ptl),0,PCS,136.72,155.00,18%, 
+Luman/,LOFCA2023,OF-CA-2023 Oil Filter Maxximo,0,PCS,161.00,176.00,18%, 
+Luman/,LOFCA2024,OF-CA-2024 Oil Filter Xylo/Bolero/Armada/Xuv-500,0,PCS,231.00,259.00,18%, 
+Luman/,LOFCA2025,OF-CA-2025 Oil Filter Kuv-100,0,PCS,161.00,197.00,18%, 
+Luman/,LOFCA2038,OF-CA-2038 Oil Filter Eicher Tra. 200 (New Series),0,PCS,161.00,180.00,18%, 
+Luman/,LOFCA2039,OF-CA-2039 Oil Filter Xuv-500/Bolero/Kuv-100/Scorpio/Tuv-300/Maxx,0,PCS,208.00,233.00,18%, 
+Luman/,LOFHINO001,Of-Hino-001 Oil Filter Hino (O/M),0,PCS,175.00,193.00,18%,OF-HINO-001
+Luman/,LOFHINO002,M***Of-Hino-002 Oil Filter Hino (E-2) Long,0,PCS,246.00,271.00,18%,OF-HINO-002
+Luman/,LOFLEY102,Of-Ley-102 Oil Filter (Long Life) L/L Trc.,0,PCS,183.00,202.00,18%,OF-LEY-002
+Luman/,LOFPT001,M***Of-Pt-001 Oil Fiter 497 Eng./Tc Euro-4,0,PCS,1193.00,1312.00,18%,OF-PT-001
+Luman/,LOFPT002,Of-Pt-002 Oil Filter T-Prima,0,PCS,1140.00,1254.00,18%,OF-PT-002
+Luman/,LOFT003,Of-T-003 Oil Filter (Long Life) T-1210,0,PCS,325.00,358.00,18%,OF-T-003
+Luman/,LOFTC001,M***Of-Tc-001 Oil Filter Tc,0,PCS,422.00,464.00,18%,OF-TC-001
+Luman/,LOFTHC002,L***Of-Thc-002 Ext.Oil Filter U-Truck (H-Ser.) 4 Cti Eng.,0,PCS,1375.00,1512.00,18%,OF-THC-102
+Luman/,LOFUT101,M***Of-Ut-101 Oil Filter L/L (101Hp) H6 Eng,0,PCS,1640.00,1804.00,18%,OF-UT-001
+Luman/,LRANET001,Rane-T-001 Stt. Filter (W/Coller) Rane Ty.Tata,0,PCS,141.00,155.00,18%,Rane-T-001
+Luman/,LSB303,Sb-303 Seal Beam (Pin Ty.) L/L,0,PCS,207.00,228.00,18%,SB-303 AP-SB-101
+Luman/,LSENSOR,Sensor Wire With Pinand Soldering,0,PCS,90.00,0.00,18%, 
+Luman/,LSF003,Sf-003 Stg. Filter Leyland,0,PCS,134.00,147.00,18%,SF-003
+Luman/,LSF005,Sf-005 Hy.Pwr.Stt.Filter (Plain) Rane Ty.,0,PCS,156.00,171.00,18%,SF-005
+Luman/,LSF111,Sf-111 Hy.Pwr.Stt.Filter (W/Rubb.Slv) Zf Ty.,0,PCS,115.00,127.00,18%,SF-111
+Luman/,LSF112,Sf-112 Hy.Pwr.Stt.Filter (Plastic Cap) Rane N/M,0,PCS,226.00,248.00,18%,SF-112
+Luman/,LSF113,Sf-113 Hy.Pwr.Stt.Filter (Zf Ty.) T-1210/1612,0,PCS,104.00,114.00,18%,SF-113
+Luman/,LSLS20,Sls-20 Stop Light Switch,0,PCS,0.00,0.00,18%,SLS-020
+Luman/,LST101L,M***St-101-L Fuel Stainer (S/S) Glassi (L) Balwan,0,PCS,151.00,167.00,18%,ST-001L
+Luman/,LST101T,M***St-101-T Fuel Stainer (S/B) Glassi (T) Yuvraj,0,PCS,149.00,164.00,18%,ST-001-T
+Luman/,LTL127,Tl-127 Tail Lamp Assy. (4 Chamber) Left Tata,0,PCS,0.00,0.00,18%,TL-127
+Luman/,LTL127ALEY,Tl-127-A-Ley Tail Lamp Assy.(4 Chamber) T/ L/L,0,PCS,210.00,232.00,18%,TL-127-A-004
+Luman/,LTL127B,Tl-127(B) T/Lamp Assy.(Metalic Abs) (Left) Tata,0,PCS,406.00,446.00,18%,TL-127B
+Luman/,LTL127C,Tl-127-C Tail Lamp Assy. (P.C.Lence) 4Chamber L/L,0,PCS,406.00,446.00,18%,TL-127C
+Luman/,LTL128,Tl-128 Tail Lamp Assy. (4 Chamber) Right Tata,0,PCS,0.00,0.00,18%,TL-128
+Luman/,LTL128B,Tl-128(B) T/Lamp Assy.(Metalic Abs) (Right) Tata,0,PCS,406.00,446.00,18%,TL-128B
+Luman/,LTRFF002,Tr-Ff-002/1613-Ff-002 Dsl Water Saprator (Blue) Ford,0,PCS,369.00,406.00,18%,1613-FF-002
+Luman/,LTURBOWS001,Z***Turbo-Ws-001 Diesel Water Saprater (Gold) 1613 Turbo,0,PCS,297.00,327.00,18%,Turbo-WS-001
+Luman/,LUF101,Uf-101 Adblue D.E.F.Urea Filter,0,PCS,1169.00,1285.00,18%,UF-101
+Luman/,LUF201,Uf-201 Sensor Vented Filter (Bs-4)/T16323 Lpo,0,PCS,1071.00,1178.00,18%,UF-201
+Luman/,LUF301,Uf-301 Urea Filter B-Benz,0,PCS,2264.00,2490.00,18%,UF-301
+Luman/,LWC001,L***Wc-001 Water Coolant Filter L/L Bs-2,0,PCS,446.00,491.00,18%,WC-001
+Luman/,LWS002T001LT,Ws-002-T-001(Lt) Feed Pump (Water Sap.) 2515/Tc.,0,PCS,857.00,943.00,18%,WS-002T002LT
+Luman/,LWS002T002RT,Ws-002-T-002(Rt) Feed Pump (Water Sap.) 497 Eng.,0,PCS,857.00,943.00,18%,WS-002T002RT
+Luman/,LWS002TS,M***Ws-002[T] Sensor Fuel Water Dsl. Sep. (W/Sensor) T-1109,0,PCS,1526.00,1679.00,18%,WS-002T-With Sensor
+Luman/,LWS004TS,Ws-004(T) Sensor Fuel Water Dsl. Sep. (W/Sensor) 4018,0,PCS,1692.00,1862.00,18%,WS-004T WITH SENSOR
+Luman/,LWS005T,Ws-005(T) Fuel Water Dsl. Seperator 1109 Ultra,0,PCS,1843.00,2027.00,18%,WS-005T
+Luman/,LWS006T,M***Ws-006(T) Fuel Water Dsl. Seperator Tc-3118,0,PCS,1730.00,1903.00,18%,WS-006T
+Luman/,LWS006T001,Ws-006-T-001 Fue Of Head (Water Sap.) Tc-3118,0,PCS,857.00,943.00,18%,WS-006T001
+Luman/,LWS008T,Ws-008(T) Water Separator M&M Max Force,0,PCS,887.00,976.00,18%,WS-008T
+Luman/,LWS07T,Ws-07(T) Water Saprator Cummins C-Series,0,PCS,1527.00,1679.00,18%,WS-07T
+Luman/,LWS102L,M***Ws-102(L) Fuel Water Dsl Seprator L/L H6 Eng.,0,PCS,1135.00,1249.00,18%,WS-002L
+Luman/,LWS13TP,Ws-13(Tp) Fuel Water Sapretar (Twin Type) L/L Boss,0,PCS,2344.00,2579.00,18%,WS-13TP
+Luman/,LWS14,M***Ws-14 Fuel Water Separator B-Benz 1613/3116,0,PCS,1065.00,1172.00,18%,WS-14
+Luman/,LWS14002S,Ws-14-002(S) Sensor Cup Assy.B-Benz 3116,0,Pcs,501.00,551.00,18%,WS-14-002
+Luman/,LWS15,M***Ws-15 Water Saprator B-Benz 1613/2523/3116,0,PCS,1068.00,1175.00,18%,WS-15
+Luman/,LWS15DRAIN,Ws-15 (Drain Plug) Only Drain Plug B-Benz 2523,0,PCS,554.00,610.00,18%,
+Luman/,LWS20,Ws-20 Water Seprator 380Kva Cummins Gen,0,PCS,2041.00,2246.00,18%,WS-20
+Luman/,LWS21,Ws-21 Water Saprater L/L-3118,0,PCS,776.00,853.00,18%,WS-21
+Luman/,LWS24,M***Ws-24 Fuel Water Sap.(W/Out/D.Plug) L/L Db-18,0,PCS,1144.00,1258.00,18%,WS-24
+Luman/,LWS26,Ws-26 Fuel Water Separator Xylo/L/L Mitr Bus,0,PCS,935.00,1029.00,18%,WS-26
+Luman/,LWS2TP,Ws-2-Tp Water Separator T-Prima,0,PCS,1739.00,1913.00,18%,WS-02-TP
+Luman/,LWS31,Ws-31 Fuel Water Sep.Eicher Bus,0,PCS,1238.00,1362.00,18%,WS-31
+Luman/,LWS34,Ws-34 Water Saparator T-Ultra Bus,0,PCS,2075.00,2283.00,18%,WS-34
+Luman/,LWS37,L***Ws-37 Water Sep.(W/Out/A-Valve) B-S.9 T-2518,0,PCS,2079.00,2287.00,18%,WS-37
+Luman/,LWS38,Ws-38 F/Water Separator E/Pro 6025T (Bs-3),0,PCS,1009.00,1109.00,18%,WS-38
+Luman/,LWS48,Ws-48 (W/Sensor) Water Seprator (Stag-1) A-L N4/H-6,0,PCS,4196.00,4615.00,18%,WS-48*
+Luman/,LWS48N,Z***Ws-48(N) W/Out Sensor,0,PCS,2520.00,2772.00,18%, 
+Luman/,LWS49,Ws-49 (W/D-Plug) Water Separator (Stag-2) A-L N4/H6,0,PCS,3296.00,3625.00,18%,WS-49*
+Luman/,LWS9T,Ws-9(T) Water Sap.(Dsl.Filter) 1109 Ultra,0,PCS,1383.00,1522.00,18%,WS-9T
+Luman/,LWSUT000,Ws-Ut-000 Dsl Water Sep.Complete Assy.L/L Crs,0,Pcs,7446.00,8191.00,18%,WS-UT-000
+Luman/,LWSUT001,Ws-Ut-001 Feed Pump Assy.Only L/L Crs,0,PCS,3119.00,0.00,18%,WS-UT-001
+Luman/,LWSUT002,Ws-Ut-002 Sensor Cup Assy.Only L/L Crs,0,PCS,1832.00,2015.00,18%,WS-UT-002
+Luman/,LWSUT003,Ws-Ut-003 Fuel Seprator L/L Crs & U-Truck,0,PCS,3032.00,3336.00,18%,WS-UT-003
+Luman/,LZFT001,Zf-T-001 Stt.Filter Z/F Type,0,PCS,110.00,0.00,18%, 
+Luman-C,LCOOL151,Coolant (1:5) 1Ltr,0,PCS,122.00,321.00,18%, 
+Luman-C,LCOOL153,Coolant (1:5) 3 Ltr,0,PCS,354.00,815.00,18%, 
+Luman-C,LCOOL155,Coolant (1:5) 5 Ltr,0,PCS,593.00,1230.00,18%, 
+Luman-C,LRTU15001,Rtu-1500 Coolant Ready To Use 1 Ltr,0,PCS,90.00,245.00,18%,
+Luman-L,L11091R,L***Lbl 011B / T/T-1109/ 1 O/S W/Rivit,0,Set,1641.00,2350.00,18%, 
+Luman-L,L11092R,Lbl 011C / T/T-1109/ 2 O/S W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,L1109SR,L***Lbl 011A / T/T-1109/ Std W/Rivit,0,SET,1504.00,2154.00,18%, 
+Luman-L,L6081R,L***Lbl013B/T/T-608/407/1 O/S W/Rivit,0,SET,952.00,1363.00,18%, 
+Luman-L,L6082R,Lbl013A/T/T-608/407/2 O/S W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,L608SR,L***Lbl013A/T/T-608/407/Std W/Rivit,0,SET,842.00,1206.00,18%, 
+Luman-L,L7091R,L***Lbl 009B / T/T-709/ 1 O/S W/Rivit,0,SET,1247.00,1785.00,18%, 
+Luman-L,L7092R,Lbl 009C / T/T-709/ 2 O/S W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,L709SR,L***Lbl 009A / T/T-709/ Std W/Rivit,0,Set,1151.00,1648.00,18%, 
+Luman-L,L9091R,Lbl 010B / T/T-909/ 1 O/S W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,L9092R,Lbl 010C / T/T-909/ 2 O/S W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,L909SR,Lbl 010A / T/T-909/ Std W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,LBB25T1R,L***Lbl 012B / Bb/25T/ 1 O/S W/Rivit,0,SET,3194.00,4572.00,18%,
+Luman-L,LBB25T2R,L***Lbl 012C / Bb/25T/ 2 O/S W/Rivit,0,SET,3302.00,4728.00,18%, 
+Luman-L,LBB25TSR,L***Lbl 012A / Bb/25T/ Std W/Rivit,0,SET,3084.00,4416.00,18%, 
+Luman-L,LBOLERO1R,L***Lbl014B/Bolero/1 O/S Rear Bolero W/Rivit,0,SET,639.00,703.00,18%, 
+Luman-L,LBOLERO2R,Lbl014A/Bolero/2 O/S Rear Bolero W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,LBOLEROSR,L***Lbl014A/Bolero/Std Rear Bolero W/Rivit,0,Set,614.00,675.00,18%, 
+Luman-L,LBP001A,Lbp-001(A) Front Brake Pad Set Bolero,0,SET,681.00,943.00,18%,
+Luman-L,LBP002A,L***Lbp-002(A) Front Brake Pad Set T-Ace/Indica,0,SET,471.00,653.00,18%,
+Luman-L,LBP005A,Bp-005(A) Front Brake Pad L/L Dost/Ace Mint,0,SET,716.00,1089.00,18%,
+Luman-L,LBS001A,L***Bs-001(A) Rear Brake Shoe Set (S.O.4) T-Ace (India Brake),0,SET,606.00,695.00,18%,
+Luman-L,LFUWA1,Lbl/020(B) B.Liner (1 O/S) Fuwa-16 Hole (W/Rivit),0,SET,2910.00,4162.00,18%,
+Luman-L,LFUWA2,L***Lbl/020(C) B.Liner (2 O/S) Fuwa-16 Hole (W/Rivit),0,SET,3122.00,4466.00,18%,
+Luman-L,LFUWAS,L***Lbl/020(A) B.Liner (Std) Fuwa-16 Hole (W/Rivit),0,SET,2680.00,3832.00,18%,
+Luman-L,LHLP10111R,L***Lbl 005B / L /Hlp/10&11/ 1 O/S W/Rivit,0,SET,3348.00,4794.00,18%, 
+Luman-L,LHLP10112R,L***Lbl 005C / L /Hlp/10&11/ 2 O/S W/Rivit,0,SET,3568.00,5108.00,18%, 
+Luman-L,LHLP1011SR,L***Lbl 005A / L /Hlp/10&11/ Std W/Rivit,0,SET,3150.00,4508.00,18%, 
+Luman-L,LHLP341R,L***Z***Lbl/002B/Al/Hlp/3&4 (1 O/S) Rr.L/L (S.O.8) W/Rivit,0,SET,3160.00,4532.00,18%, LBL 002B / AL /HLP-3 & 4 / OS1
+Luman-L,LHLP342R,L***Z***Lbl/002C/Al/Hlp/3&4 (2 O/S) Rr.L/L (S.O.8) W/Rivit,0,SET,3352.00,4800.00,18%, LBL 002C / AL /HLP-3 & 4 / OS2
+Luman-L,LHLP34SR,L***Z***Lbl/002A/Al/Hlp/3&4 (Std) Rr.L/L (S.O.8) W/Rivit,0,SET,2958.00,4236.00,18%, LBL 002A / AL / HLP 3 & 4 / STD
+Luman-L,LHLP781R,Z***Lbl/003B/Al/Hlp/7&8 (1 O/S) Fr.L/L 12M (S.O.8) W/Rivit,0,SET,2996.00,4318.00,18%, LBL 003B / AL /HLP-7 & 8 / OS 1
+Luman-L,LHLP782R,Z***Lbl/003C/Al/Hlp/7&8 (2 O/S) Fr.L/L 12M (S.O.8) W/Rivit,0,SET,3210.00,3532.00,18%, LBL 003C / AL /HPL- 7 & 8 / OS 2
+Luman-L,LHLP78SR,L***Z***Lbl/003A/Al/Hlp/7&8 (Std) Fr.L/L 12M (S.O.8) W/Rivit,0,SET,2808.00,4022.00,18%, LBL 003A /  AL /HLP-7 & 8 / STD
+Luman-L,LSM341R,L***Lbl 004B / L /Sm/3&4/ 1 O/S W/Rivit,0,Set,2320.00,3324.00,18%,
+Luman-L,LSM342R,Lbl 004C / L /Sm/3&4/ 2 O/S W/Rivit,0,SET,0.00,0.00,18%, 
+Luman-L,LSM34SR,"Z***Lbl/004A/Sm/3&4 (Std) L/L 7"" (10 Hole) W/Rivit",0,SET,2182.00,3124.00,18%,
+Luman-L,LSM61R,L***Lbl 015B/L/Sm/5&6/1 O/S All L/L Truck Front 6 W/Rivit,0,Set,2278.00,3262.00,18%, 
+Luman-L,LSM6SR,L***Lbl 015A/L/Sm/5&6/Std All L/L Truck Front 6 W/Rivit,0,SET,2156.00,3088.00,18%, 
+Luman-L,LST21R,Z***SEE IN LTS21R Lbl/001B/T/Ts2 (1 O/S) Rr.1612 (S.O.8) W/Rivit,0,SET,2478.00,3548.00,18%, LBL 001B / TATA /TS/2 / OS1
+Luman-L,LTS11R,Lbl/006B/Ts-1 (1 O/S) Front. 1612 (A/B) W/Rivit (S.O.8),0,SET,2372.00,3396.00,18%,
+Luman-L,LTS12R,Lbl 006C / T/Ts/1/ 2 O/S W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,LTS1SR,Lbl/006A/Ts-1 (Std) Front. 1612 (A/B) W/Rivit (S.O.8),0,SET,2166.00,3102.00,18%,
+Luman-L,LTS21R,Lbl 001B / T /Ts/2 / 1 O/S W/Rivit,0,SET,2478.00,3548.00,18%, 
+Luman-L,LTS22R,L***Z***Lbl/001C/T/Ts2 (2 O/S) Rr.1612 (S.O.8) W/Rivit,0,SET,2712.00,3876.00,18%, LBL 001C / TATA / TS /2 /OS2
+Luman-L,LTS2SR,Lbl/001A/T/Ts2 (Std) Rr.1612 (S.O.8) W/Rivit,0,SET,2230.00,3192.00,18%, LBL 001A / TATA /TS/ 2 / STD
+Luman-L,LWTP11R,Lbl 007B / T/Wtp/1/ 1 O/S W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,LWTP12R,Lbl 007C / T/Wtp/1/ 2 O/S W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,LWTP1SR,Lbl 007A / T/Wtp/1/ Std W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,LWTP21R,Lbl 008B / T/Wtp/2/ 1 O/S W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,LWTP22R,Lbl 008C / T/Wtp/2/ 2 O/S W/Rivit,0,Set,0.00,0.00,18%, 
+Luman-L,LWTP2SR,Lbl 008A / T/Wtp/2/ Std W/Rivit,0,Set,157.00,425.00,18%, 
+Luman-Lite,LAF138SETLITE,Af-138-01/02-Lite Air Filter Set (S.O.2),0,PCS,2063.00,2269.00,18%,
+Luman-Lite,LAFUT010LITE,Af-Ut-010-Lite-Air Filter (Lite) (Outer) U-Truck,0,pcs,2400.00,3530.00,18%,
+Luman-Lite,LAFUT012LITE,Af-Ut-012-Lite-Air Filter Set (Lite),0,SET,2829.00,4161.00,18%, 
+Luman-Lite,LFF11000LITE,L***Ff-11-000-Lite-Fuel Filter (Lite),0,pcs,825.00,1214.00,18%,
+Luman-Lite,LFF121000LITE,Ff-121-000-Lite-Fuel Filter Element (Lite),0,pcs,498.00,726.00,18%,
+Luman-Lite,LFF12300LITE,Ff-123-00-Lite-Fuel Filter (Lite),0,pcs,1018.00,1497.00,18%,
+Luman-Lite,LFF12400LITE,L***Ff-124-00-Lite-Fuel Filter (Lite),0,pcs,681.00,992.00,18%,
+Luman-Lite,LKITEXT1LITE,Kit-Ext-1-Lite Kit (S.O.3) (Lite),0,SET,935.00,1375.00,18%,
+Luman-Lite,LOF00086LITE,Of-000-86-Lite-Oil Filter (Lite),0,pcs,412.00,606.00,18%,
+Luman-Lite,LOF14800LITE,Of-148-00-Lite-Oil Filter,0,pcs,619.00,910.00,18%,
+Luman-Lite,LOF1560000LITE,Of-156-0000-Lite-Oil Filter Element (Lite),0,pcs,521.00,759.00,18%,
+Luman-Lite,LOFHINO2LITE,Of-Hino-2-Lite-Oil Filter (Lite),0,pcs,211.00,310.00,18%,
+Luman-Lite,LOFPT010LITE,Of-Pt-010-Lite-Oil Filter (Lite),0,pcs,664.00,978.00,18%,
+Luman-Lite,LOFTC010LITE,Of-Tc-010-Lite-Oil Filter (Lite),0,pcs,353.00,520.00,18%,
+Luman-Lite,LOFUT100LITE,Of-Ut-1-00-Lite-Oil Filter (Lite),0,pcs,833.00,1214.00,18%,
+Luman-Lite,LST001L0LITE,St-001-L-0-Lite-Fuel Stainer (S/S) (Lite),0,pcs,101.00,148.00,18%,
+Luman-Lite,LST001T0LITE,L***St-001-T-0-Lite-Fuel Stainer (S/B) (Lite),0,pcs,101.00,148.00,18%,
+Luman-Lite,LWS00014LITE,Ws-000-14-Lite-Fuel Water Separator (Lite),0,pcs,865.00,1260.00,18%,
+Luman-Lite,LWS00024LITE,Ws-000-24-Lite-Fuel Water Seperator (Lite),0,pcs,718.00,1045.00,18%,
+Luman-Lite,LWS002L0LITE,Ws-002-L0-Lite-Fuel Water Seperator (Lite),0,pcs,751.00,1094.00,18%,
+Luman-Lite,LWS02TSNLITE,Ws-02-T-Sn-Lite-Fuel Water Separator (Lite),0,pcs,797.00,1160.00,18%,
+Luman-Lite,LWS06T00LITE,Ws-06-T-00-Lite-Fuel Water Separator (Lite),0,pcs,906.00,1333.00,18%,
+Luman-Lite,LWS15000LITE,Ws-15-000-Lite-Fuel Water Separator (Lite),0,pcs,723.00,1054.00,18%,
+Luman-P,LAC054001,Ac-054-001 Elbow Hose (4 X 4) L/L,0,PCS,0.00,0.00,18%, 
+Luman-P,LAC054007,Ac-054-007 Reducer Hose (4 X 3.5) L/L,0,PCS,0.00,0.00,18%, 
+Luman-P,LAC057011,Ac-057-011 Gasket L/L 2214,0,PCS,49.00,54.00,18%,AC-057-011
+Luman-P,LAC057012,Ac-057-012 Flange Pipe Assy. L/L 2214,0,PCS,197.00,217.00,18%,AC-057-012
+Luman-P,LAC057013,Ac-057-013 Elbow Hose (4 X 4) L/L 2214,0,PCS,457.00,502.00,18%,AC-057-013
+Luman-P,LAC060010,Ac-060-010 Pre-Cleaner Assy. L/L 3516,0,PCS,1898.00,2088.00,18%,AC-060-010
+Luman-P,LAC0690002,Ac-069-0002 Flenge Pipe L/L,0,PCS,175.00,193.00,18%,AC-069-000-0002
+Luman-P,LAC0690005,Ac-069-00-05 Pre Cleaner Assy. L/L 3118,0,Pcs,1898.00,2088.00,18%,AC-069-000-0005
+Luman-P,LAC0690006,Ac-069-0006 Stack Pipe Assy. 2516/3118,0,PCS,645.00,709.00,18%,AC-069-000-0006
+Luman-P,LAC0690007,Ac-069-0007 Cobra Hose (5 X 5) L/L,0,PCS,1136.00,1249.00,18%,AC-069-000-0007
