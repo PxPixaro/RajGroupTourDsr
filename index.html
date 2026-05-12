@@ -67,7 +67,7 @@
 <script>
 const WA_NUMBER='917046533330';
 // Google Apps Script Web App URL yaha paste kare. Example: https://script.google.com/macros/s/XXXX/exec
-const GOOGLE_SCRIPT_URL='PASTE_YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzoKuDwBvaB7UHNO4RX9NoqzujjyT-FRhaULEtJ0OK9JBCO6eBf26udcoKDU7K1QltU/exec';
 let customers=[],products=[],reasons=[],order={},selectedReasons=[],productPage=1; const PRODUCT_PAGE_SIZE=15;
 const money=n=>'₹'+(Number(n||0).toFixed(2)); const clean=s=>(s??'').toString().trim();
 function parseCSV(text){text=(text||'').replace(/^\uFEFF/,'');const rows=[];let row=[],cur='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'){if(q&&n==='"'){cur+='"';i++}else q=!q}else if(c===','&&!q){row.push(cur);cur=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);row=[];cur=''}else cur+=c}row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);if(!rows.length)return[];const head=rows[0].map(h=>clean(h).replace(/^\uFEFF/,''));return rows.slice(1).map(r=>{let o={};head.forEach((h,i)=>o[h]=clean(r[i]));return o})}
