@@ -14,7 +14,7 @@
     table{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eaf4ff;color:#063b7a}.qtybox{display:flex;align-items:center;gap:8px}.qtybox button{width:34px;height:34px;border:0;border-radius:50%;font-size:22px;font-weight:900;color:#fff;background:var(--blue)}.qtybox .minus{background:var(--danger)}.pill{display:inline-block;padding:5px 10px;background:#fff4cc;border-radius:999px;font-weight:700;color:#7a4b00}.muted{color:var(--muted);font-size:13px}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.box{background:#f8fbff;border:1px solid #dbeafe;border-radius:14px;padding:12px}.box b{display:block;font-size:20px;color:var(--blue)}.reason-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tag{background:#eaf4ff;border:1px solid #93c5fd;border-radius:999px;padding:8px 11px;font-weight:700}.tag button{margin-left:8px;border:0;background:transparent;color:var(--danger);font-weight:900;cursor:pointer}.hide{display:none}.printArea{background:white;padding:18px;border-radius:18px}.watermark{opacity:.08;position:absolute;right:30px;top:20px;width:250px}.relative{position:relative;overflow:hidden}
     @media(max-width:850px){.grid,.row{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.head{align-items:flex-start}.title h1{font-size:23px}.logo{width:76px}}
     @media print{body{background:#fff}header,.noPrint,.card:not(.printable){display:none!important}main{margin:0;max-width:none}.printable{box-shadow:none;border:0}.printArea{padding:0}button,input,select,textarea{display:none!important}.hidePrint{display:none!important}table{page-break-inside:auto}tr{page-break-inside:avoid}.printOnly{display:block!important}}
-    .printOnly{display:none}
+    .printOnly{display:none}.detailGrid{display:grid;grid-template-columns:150px 1fr;gap:8px 12px}.detailGrid b{color:var(--blue)}@media(max-width:600px){.detailGrid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -25,7 +25,7 @@
   <div class="grid">
     <section class="card noPrint"><h2>Area Selection</h2>
       <label>Area</label><select id="areaSelect"><option value="">customer.csv load ho raha hai...</option></select>
-      <div class="box" style="margin-top:12px">Area select karne ke baad us area ki party Customer Selection me show hogi.</div>
+      <div class="box" style="margin-top:12px">Area / City select karne ke baad us area ki party Customer Selection me show hogi.</div>
     </section>
 
     <section class="card noPrint"><h2>Customer Selection</h2>
@@ -80,7 +80,7 @@ async function loadCSVFromData(fileNames, cb){
   return {ok:false,error:lastError};
 }
 function setCustomers(d){customers=d; populateAreaSelect(); populateCustomerSelect()}
-function getArea(c){return val(c,['Area','area','AREA'])}
+function getArea(c){return val(c,['Area','area','AREA','City','city','CITY'])}
 function populateAreaSelect(){
   const areas=[...new Set(customers.map(getArea).filter(Boolean))];
   areaSelect.innerHTML='<option value="">All Area</option>'+areas.map(a=>`<option>${a}</option>`).join('');
@@ -102,7 +102,18 @@ function setReasons(d){reasons=d.map(r=>val(r,['Reason','reason'])||Object.value
 
 function keys(o){return Object.keys(o||{})} function val(o,names){let ks=keys(o);for(const n of names){let k=ks.find(x=>x.toLowerCase()===n.toLowerCase());if(k)return o[k]} return ''}
 areaSelect.onchange=()=>{populateCustomerSelect()};
-customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Customer detail yaha show hogi.';renderOrder();return} customerInfo.innerHTML=keys(c).map(k=>`<b>${k}:</b> ${c[k]}`).join('<br>'); renderOrder()};
+customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Customer detail yaha show hogi.';renderOrder();return} showCustomerDetail(c); renderOrder()};
+function showCustomerDetail(c){
+  const preferred=['City','Area','Name','Sales','OD','Segment','Mobile','No','Remark','Address'];
+  const shown=[];
+  const rows=[];
+  preferred.forEach(label=>{
+    const actual=keys(c).find(k=>k.toLowerCase()===label.toLowerCase());
+    if(actual && !shown.includes(actual)){ shown.push(actual); rows.push(`<b>${actual}</b><span>${c[actual]||'-'}</span>`); }
+  });
+  keys(c).forEach(k=>{ if(!shown.includes(k)) rows.push(`<b>${k}</b><span>${c[k]||'-'}</span>`); });
+  customerInfo.innerHTML='<h3 style="margin:0 0 10px;color:var(--blue)">Party Detail</h3><div class="detailGrid">'+rows.join('')+'</div>';
+}
 groupSelect.onchange=renderProducts; productSearch.oninput=renderProducts;
 function productId(p,i){return (val(p,['Code'])||i)+'__'+i} function qtyOf(id){return order[id]?.qty||0}
 function renderProducts(){let g=groupSelect.value, s=productSearch.value.toLowerCase();let tb=document.querySelector('#productTable tbody');tb.innerHTML='';products.forEach((p,i)=>{let gid=val(p,['Group','Product Group','Brand']);let code=val(p,['Code']);let desc=val(p,['Description','Product','Item']); if(g&&gid!==g)return; if(s&&!((code+' '+desc).toLowerCase().includes(s)))return;let id=productId(p,i);tb.insertAdjacentHTML('beforeend',`<tr><td>${gid}</td><td>${code}</td><td>${desc}</td><td>${val(p,['Stock'])}</td><td>${val(p,['Unit'])}</td><td>${val(p,['Rate'])}</td><td>${val(p,['Mrp','MRP'])}</td><td>${val(p,['Gst','GST'])}</td><td><div class="qtybox"><button class="minus" onclick="chgQty('${id}',-1)">−</button><span>${qtyOf(id)}</span><button onclick="chgQty('${id}',1)">+</button></div></td></tr>`)})}
