@@ -23,14 +23,14 @@
 </header>
 <main>
   <div class="grid">
-    <section class="card noPrint"><h2>Area Selection</h2>
-      <label>Area</label><select id="areaSelect"><option value="">customer.csv load ho raha hai...</option></select>
-      <div class="box" style="margin-top:12px">Area / City select karne ke baad us area ki party Customer Selection me show hogi.</div>
+    <section class="card noPrint"><h2>City Selection</h2>
+      <label>City</label><select id="areaSelect"><option value="">customer.csv load ho raha hai...</option></select>
+      <div class="box" style="margin-top:12px">City select karne ke baad us City ki party Name Selection me show hogi.</div>
     </section>
 
-    <section class="card noPrint"><h2>Customer Selection</h2>
-      <label>Customer</label><select id="customerSelect"><option value="">customer.csv load ho raha hai...</option></select>
-      <div id="customerInfo" class="box" style="margin-top:12px">Customer detail yaha show hogi.</div>
+    <section class="card noPrint"><h2>Name Selection</h2>
+      <label>Name</label><select id="customerSelect"><option value="">customer.csv load ho raha hai...</option></select>
+      <div id="customerInfo" class="box" style="margin-top:12px">Name select karte hi party detail yaha show hogi.</div>
     </section>
 
     <section class="card full noPrint"><h2>Brand / Product Group Order</h2>
@@ -49,7 +49,7 @@
     <section class="card printable"><div class="printArea relative" id="printArea">
       <img class="watermark" src="assets/LOGO.png" onerror="this.onerror=null;this.src='LOGO.png'" alt="">
       <h2>Order Section</h2>
-      <div id="printHeader"><b>Customer:</b> <span id="printCustomer">Not selected</span><br><b>Date/Time:</b> <span id="printDate"></span></div>
+      <div id="printHeader"><b>Name:</b> <span id="printCustomer">Not selected</span><br><b>Date/Time:</b> <span id="printDate"></span></div>
       <div style="overflow:auto"><table id="orderTable"><thead><tr><th>Code</th><th>Description</th><th>Unit</th><th>Rate</th><th>GST</th><th>Qty</th><th>Amount</th></tr></thead><tbody></tbody></table></div>
       <div class="summary"><div class="box">Items<b id="sumItems">0</b></div><div class="box">Qty<b id="sumQty">0</b></div></div>
       <h2 style="margin-top:18px">DSR Activity</h2>
@@ -79,22 +79,22 @@ async function loadCSVFromData(fileNames, cb){
   }
   return {ok:false,error:lastError};
 }
-function setCustomers(d){customers=d; populateAreaSelect(); populateCustomerSelect()}
-function getArea(c){return val(c,['Area','area','AREA','City','city','CITY'])}
-function populateAreaSelect(){
-  const areas=[...new Set(customers.map(getArea).filter(Boolean))];
-  areaSelect.innerHTML='<option value="">All Area</option>'+areas.map(a=>`<option>${a}</option>`).join('');
+function setCustomers(d){customers=d; populateCitySelect(); populateCustomerSelect()}
+function getCity(c){return val(c,['City','city','CITY','Area','area','AREA'])}
+function populateCitySelect(){
+  const cities=[...new Set(customers.map(getCity).filter(Boolean))];
+  areaSelect.innerHTML='<option value="">All City</option>'+cities.map(a=>`<option>${a}</option>`).join('');
 }
 function populateCustomerSelect(){
-  const selectedArea=areaSelect.value;
+  const selectedCity=areaSelect.value;
   const opts=[];
   customers.forEach((c,i)=>{
-    if(selectedArea && getArea(c)!==selectedArea) return;
-    const name=val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]||'Customer '+(i+1);
+    if(selectedCity && getCity(c)!==selectedCity) return;
+    const name=val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]||'Name '+(i+1);
     opts.push(`<option value="${i}">${name}</option>`);
   });
   customerSelect.innerHTML='<option value="">Select Customer</option>'+opts.join('');
-  customerInfo.textContent='Customer detail yaha show hogi.';
+  customerInfo.textContent='Name select karte hi party detail yaha show hogi.';
   renderOrder();
 }
 function setProducts(d){products=d; const gs=[...new Set(d.map(p=>val(p,['Group','Product Group','Brand'])).filter(Boolean))]; groupSelect.innerHTML='<option value="">All Groups</option>'+gs.map(g=>`<option>${g}</option>`).join(''); renderProducts()}
@@ -102,7 +102,7 @@ function setReasons(d){reasons=d.map(r=>val(r,['Reason','reason'])||Object.value
 
 function keys(o){return Object.keys(o||{})} function val(o,names){let ks=keys(o);for(const n of names){let k=ks.find(x=>x.toLowerCase()===n.toLowerCase());if(k)return o[k]} return ''}
 areaSelect.onchange=()=>{populateCustomerSelect()};
-customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Customer detail yaha show hogi.';renderOrder();return} showCustomerDetail(c); renderOrder()};
+customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Name select karte hi party detail yaha show hogi.';renderOrder();return} showCustomerDetail(c); renderOrder()};
 function showCustomerDetail(c){
   const preferred=['City','Area','Name','Sales','OD','Segment','Mobile','No','Remark','Address'];
   const shown=[];
@@ -123,7 +123,7 @@ function addReason(){let r=reasonSelect.value;if(r&&!selectedReasons.includes(r)
 function addOtherReason(){let r=clean(otherReason.value);if(r&&!selectedReasons.includes(r)){selectedReasons.push('Other: '+r);otherReason.value='';renderDSR()}}
 function removeReason(i){selectedReasons.splice(i,1);renderDSR()}
 function renderDSR(){reasonTags.innerHTML=selectedReasons.map((r,i)=>`<span class="tag">${r}<button onclick="removeReason(${i})">×</button></span>`).join('');dsrReport.innerHTML=selectedReasons.length?'<ol>'+selectedReasons.map(r=>`<li>${r}</li>`).join('')+'</ol>':'No reason selected.'}
-function buildText(type='order'){let c=customers[customerSelect.value];let cname=c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'Not selected';let lines=[`RAJGROUP ${type==='order'?'ORDER':'DSR REPORT'}`,`Customer: ${cname}`,`Date: ${new Date().toLocaleString('en-IN')}`]; if(type==='order'){lines.push('\nItems:');Object.values(order).forEach(o=>{let p=o.product;lines.push(`${val(p,['Code'])} - ${val(p,['Description','Product','Item'])} | Qty: ${o.qty} | Rate: ${val(p,['Rate'])}`)})} lines.push('\nReasons/Activity:'); selectedReasons.forEach(r=>lines.push('- '+r)); return lines.join('\n')}
+function buildText(type='order'){let c=customers[customerSelect.value];let cname=c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'Not selected';let lines=[`RAJGROUP ${type==='order'?'ORDER':'DSR REPORT'}`,`Name: ${cname}`,`Date: ${new Date().toLocaleString('en-IN')}`]; if(type==='order'){lines.push('\nItems:');Object.values(order).forEach(o=>{let p=o.product;lines.push(`${val(p,['Code'])} - ${val(p,['Description','Product','Item'])} | Qty: ${o.qty} | Rate: ${val(p,['Rate'])}`)})} lines.push('\nReasons/Activity:'); selectedReasons.forEach(r=>lines.push('- '+r)); return lines.join('\n')}
 function placeOrderWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('order'))}`,'_blank')}
 function shareReportWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('report'))}`,'_blank')}
 function downloadPDF(){renderOrder();window.print()}
