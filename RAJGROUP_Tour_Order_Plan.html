@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAJGROUP Tour Order Plan</title>
+  <style>
+    :root{--blue:#005cbd;--blue2:#0096ff;--gold:#ffb400;--gold2:#ffe55c;--dark:#172033;--muted:#64748b;--bg:#f5f8ff;--card:#fff;--danger:#dc2626;--ok:#16a34a}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f7fbff,#fff8df);color:var(--dark)}
+    header{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--blue2),var(--blue));padding:18px;color:#fff;box-shadow:0 6px 20px #0002;position:sticky;top:0;z-index:5}
+    .head{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px}.logo{width:92px;height:68px;object-fit:contain;background:white;border-radius:14px;padding:6px;box-shadow:0 4px 12px #0003}.title h1{margin:0;font-size:30px;text-shadow:0 2px 3px #0005}.title p{margin:4px 0 0;font-weight:700;letter-spacing:.5px}
+    main{max-width:1200px;margin:22px auto;padding:0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border-radius:20px;padding:18px;box-shadow:0 8px 26px #0b3b7a18;border:1px solid #dbeafe}.full{grid-column:1/-1}h2{margin:0 0 14px;color:var(--blue);font-size:22px;border-left:7px solid var(--gold);padding-left:10px}
+    label{font-weight:700;margin:10px 0 6px;display:block}select,input,textarea{width:100%;padding:12px;border:1px solid #bfdbfe;border-radius:12px;font-size:15px;background:#fff}textarea{min-height:82px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--blue2),var(--blue));box-shadow:0 5px 14px #0066cc33}.btn.gold{background:linear-gradient(90deg,var(--gold),#ff8c00);color:#111}.btn.green{background:linear-gradient(90deg,#22c55e,#15803d)}.btn.red{background:linear-gradient(90deg,#ef4444,#b91c1c)}.btn.gray{background:#475569}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    table{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eaf4ff;color:#063b7a}.qtybox{display:flex;align-items:center;gap:8px}.qtybox button{width:34px;height:34px;border:0;border-radius:50%;font-size:22px;font-weight:900;color:#fff;background:var(--blue)}.qtybox .minus{background:var(--danger)}.pill{display:inline-block;padding:5px 10px;background:#fff4cc;border-radius:999px;font-weight:700;color:#7a4b00}.muted{color:var(--muted);font-size:13px}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}.box{background:#f8fbff;border:1px solid #dbeafe;border-radius:14px;padding:12px}.box b{display:block;font-size:20px;color:var(--blue)}.reason-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tag{background:#eaf4ff;border:1px solid #93c5fd;border-radius:999px;padding:8px 11px;font-weight:700}.tag button{margin-left:8px;border:0;background:transparent;color:var(--danger);font-weight:900;cursor:pointer}.hide{display:none}.printArea{background:white;padding:18px;border-radius:18px}.watermark{opacity:.08;position:absolute;right:30px;top:20px;width:250px}.relative{position:relative;overflow:hidden}
+    @media(max-width:850px){.grid,.row{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.head{align-items:flex-start}.title h1{font-size:23px}.logo{width:76px}}
+    @media print{body{background:#fff}header,.noPrint,.card:not(.printable){display:none!important}main{margin:0;max-width:none}.printable{box-shadow:none;border:0}.printArea{padding:0}button,input,select,textarea{display:none!important}.hidePrint{display:none!important}table{page-break-inside:auto}tr{page-break-inside:avoid}.printOnly{display:block!important}}
+    .printOnly{display:none}
+  </style>
+</head>
+<body>
+<header>
+  <div class="head"><img class="logo" id="logo" src="assets/LOGO.png" onerror="this.onerror=null;this.src='LOGO.png'" alt="RAJGROUP Logo"><div class="title"><h1>RAJGROUP Tour Order Plan</h1><p>LET’S GROW TOGETHER</p></div></div>
+</header>
+<main>
+  <div class="grid">
+    <section class="card noPrint"><h2>Data Status</h2>
+      <div id="dataStatus" class="box">Data folder se CSV load ho raha hai...</div>
+      <p class="muted">Aap sirf <b>data/customer.csv</b>, <b>data/product.csv</b>, aur <b>data/Reason.csv</b> me data change kare. Page refresh karte hi updated data dropdown me aa jayega.</p>
+    </section>
+
+    <section class="card noPrint"><h2>Customer Selection</h2>
+      <label>Customer</label><select id="customerSelect"><option value="">customer.csv load ho raha hai...</option></select>
+      <div id="customerInfo" class="box" style="margin-top:12px">Customer detail yaha show hogi.</div>
+    </section>
+
+    <section class="card full noPrint"><h2>Brand / Product Group Order</h2>
+      <div class="row"><div><label>Brand / Product Group</label><select id="groupSelect"><option value="">product.csv load ho raha hai...</option></select></div><div><label>Product Search</label><input id="productSearch" placeholder="Code / description search"></div></div>
+      <div style="overflow:auto"><table id="productTable"><thead><tr><th>Group</th><th>Code</th><th>Description</th><th>Stock</th><th>Unit</th><th>Rate</th><th>MRP</th><th>GST</th><th>Qty</th></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section class="card noPrint"><h2>DSR Reason Report</h2>
+      <label>Reason</label><select id="reasonSelect"><option value="">Reason.csv load ho raha hai...</option></select>
+      <div class="actions"><button class="btn gold" onclick="addReason()">Add Reason</button></div>
+      <label>Other Reason</label><textarea id="otherReason" placeholder="Salesman manual reason likhe"></textarea>
+      <div class="actions"><button class="btn" onclick="addOtherReason()">Add Other Reason</button></div>
+      <div id="reasonTags" class="reason-list"></div>
+    </section>
+
+    <section class="card printable"><div class="printArea relative" id="printArea">
+      <img class="watermark" src="assets/LOGO.png" onerror="this.onerror=null;this.src='LOGO.png'" alt="">
+      <h2>Order Section</h2>
+      <div id="printHeader"><b>Customer:</b> <span id="printCustomer">Not selected</span><br><b>Date/Time:</b> <span id="printDate"></span></div>
+      <div style="overflow:auto"><table id="orderTable"><thead><tr><th>Code</th><th>Description</th><th>Unit</th><th>Rate</th><th>GST</th><th>Qty</th><th>Amount</th></tr></thead><tbody></tbody></table></div>
+      <div class="summary"><div class="box">Items<b id="sumItems">0</b></div><div class="box">Qty<b id="sumQty">0</b></div><div class="box">Taxable<b id="sumTaxable">₹0</b></div><div class="box">Total<b id="sumTotal">₹0</b></div></div>
+      <h2 style="margin-top:18px">DSR Activity</h2>
+      <div id="dsrReport" class="box">No reason selected.</div>
+    </div>
+      <div class="actions noPrint"><button class="btn green" onclick="placeOrderWhatsApp()">Place Order WhatsApp</button><button class="btn gold" onclick="downloadPDF()">Order PDF Download</button><button class="btn" onclick="shareReportWhatsApp()">DSR Report WhatsApp</button><button class="btn red" onclick="clearAll()">Clear</button></div>
+      <p class="muted noPrint">PDF button browser print dialog kholega; Save as PDF select kare. WhatsApp par text direct jayega, PDF attach manually karna hota hai.</p>
+    </section>
+  </div>
+</main>
+<script>
+const WA_NUMBER='917046533330'; let customers=[],products=[],reasons=[],order={},selectedReasons=[];
+const money=n=>'₹'+(Number(n||0).toFixed(2)); const clean=s=>(s??'').toString().trim();
+function parseCSV(text){const rows=[];let row=[],cur='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'){if(q&&n==='"'){cur+='"';i++}else q=!q}else if(c===','&&!q){row.push(cur);cur=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);row=[];cur=''}else cur+=c}row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);if(!rows.length)return[];const head=rows[0].map(h=>clean(h));return rows.slice(1).map(r=>{let o={};head.forEach((h,i)=>o[h]=clean(r[i]));return o})}
+async function loadCSVFromData(fileName, cb){
+  try{
+    const res = await fetch('data/' + fileName + '?v=' + Date.now());
+    if(!res.ok) throw new Error(fileName + ' not found');
+    const text = await res.text();
+    const data = parseCSV(text);
+    cb(data);
+    return {ok:true,count:data.length};
+  }catch(e){
+    return {ok:false,error:e.message};
+  }
+}
+function setStatus(results){
+  const ok = results.filter(r=>r.ok).length;
+  dataStatus.innerHTML = results.map(r=> r.ok ? `<b>✅ ${r.file}</b>: ${r.count} records loaded` : `<b>❌ ${r.file}</b>: load nahi hua`).join('<br>') + (ok<3 ? '<br><br><span class="muted">Note: Agar HTML ko direct file double-click se open kar rahe ho aur data load nahi ho raha, folder ko local server/hosting par open kare. CSV files data folder me same name se honi chahiye.</span>' : '');
+}
+function setCustomers(d){customers=d; customerSelect.innerHTML='<option value="">Select Customer</option>'+d.map((c,i)=>`<option value="${i}">${val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]||'Customer '+(i+1)}</option>`).join('')}
+function setProducts(d){products=d; const gs=[...new Set(d.map(p=>val(p,['Group','Product Group','Brand'])).filter(Boolean))]; groupSelect.innerHTML='<option value="">All Groups</option>'+gs.map(g=>`<option>${g}</option>`).join(''); renderProducts()}
+function setReasons(d){reasons=d.map(r=>val(r,['Reason','reason'])||Object.values(r)[0]).filter(Boolean); reasonSelect.innerHTML='<option value="">Select Reason</option>'+reasons.map(r=>`<option>${r}</option>`).join('')}
+
+function keys(o){return Object.keys(o||{})} function val(o,names){let ks=keys(o);for(const n of names){let k=ks.find(x=>x.toLowerCase()===n.toLowerCase());if(k)return o[k]} return ''}
+customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Customer detail yaha show hogi.';return} customerInfo.innerHTML=keys(c).map(k=>`<b>${k}:</b> ${c[k]}`).join('<br>'); renderOrder()};
+groupSelect.onchange=renderProducts; productSearch.oninput=renderProducts;
+function productId(p,i){return (val(p,['Code'])||i)+'__'+i} function qtyOf(id){return order[id]?.qty||0}
+function renderProducts(){let g=groupSelect.value, s=productSearch.value.toLowerCase();let tb=document.querySelector('#productTable tbody');tb.innerHTML='';products.forEach((p,i)=>{let gid=val(p,['Group','Product Group','Brand']);let code=val(p,['Code']);let desc=val(p,['Description','Product','Item']); if(g&&gid!==g)return; if(s&&!((code+' '+desc).toLowerCase().includes(s)))return;let id=productId(p,i);tb.insertAdjacentHTML('beforeend',`<tr><td>${gid}</td><td>${code}</td><td>${desc}</td><td>${val(p,['Stock'])}</td><td>${val(p,['Unit'])}</td><td>${val(p,['Rate'])}</td><td>${val(p,['Mrp','MRP'])}</td><td>${val(p,['Gst','GST'])}</td><td><div class="qtybox"><button class="minus" onclick="chgQty('${id}',-1)">−</button><span>${qtyOf(id)}</span><button onclick="chgQty('${id}',1)">+</button></div></td></tr>`)})}
+function chgQty(id,delta){let idx=Number(id.split('__').pop()),p=products[idx];if(!order[id])order[id]={product:p,qty:0};order[id].qty=Math.max(0,order[id].qty+delta);if(order[id].qty===0)delete order[id];renderProducts();renderOrder()}
+function renderOrder(){printDate.textContent=new Date().toLocaleString('en-IN');let c=customers[customerSelect.value];printCustomer.textContent=c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'Not selected';let tb=document.querySelector('#orderTable tbody');tb.innerHTML='';let items=0,qty=0,taxable=0,total=0;Object.values(order).forEach(o=>{let p=o.product,r=Number(val(p,['Rate'])||0),gst=Number((val(p,['Gst','GST'])||'0').replace('%','')),amt=r*o.qty,tot=amt+(amt*gst/100);items++;qty+=o.qty;taxable+=amt;total+=tot;tb.insertAdjacentHTML('beforeend',`<tr><td>${val(p,['Code'])}</td><td>${val(p,['Description','Product','Item'])}</td><td>${val(p,['Unit'])}</td><td>${money(r)}</td><td>${gst}%</td><td>${o.qty}</td><td>${money(tot)}</td></tr>`) }); if(!items)tb.innerHTML='<tr><td colspan="7">No order item selected.</td></tr>';sumItems.textContent=items;sumQty.textContent=qty;sumTaxable.textContent=money(taxable);sumTotal.textContent=money(total);renderDSR()}
+function addReason(){let r=reasonSelect.value;if(r&&!selectedReasons.includes(r)){selectedReasons.push(r);renderDSR()}}
+function addOtherReason(){let r=clean(otherReason.value);if(r&&!selectedReasons.includes(r)){selectedReasons.push('Other: '+r);otherReason.value='';renderDSR()}}
+function removeReason(i){selectedReasons.splice(i,1);renderDSR()}
+function renderDSR(){reasonTags.innerHTML=selectedReasons.map((r,i)=>`<span class="tag">${r}<button onclick="removeReason(${i})">×</button></span>`).join('');dsrReport.innerHTML=selectedReasons.length?'<ol>'+selectedReasons.map(r=>`<li>${r}</li>`).join('')+'</ol>':'No reason selected.'}
+function buildText(type='order'){let c=customers[customerSelect.value];let cname=c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'Not selected';let lines=[`RAJGROUP ${type==='order'?'ORDER':'DSR REPORT'}`,`Customer: ${cname}`,`Date: ${new Date().toLocaleString('en-IN')}`]; if(type==='order'){lines.push('\nItems:');Object.values(order).forEach(o=>{let p=o.product;lines.push(`${val(p,['Code'])} - ${val(p,['Description','Product','Item'])} | Qty: ${o.qty} | Rate: ${val(p,['Rate'])}`)});lines.push(`Total: ${sumTotal.textContent}`)} lines.push('\nReasons/Activity:'); selectedReasons.forEach(r=>lines.push('- '+r)); return lines.join('\n')}
+function placeOrderWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('order'))}`,'_blank')}
+function shareReportWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('report'))}`,'_blank')}
+function downloadPDF(){renderOrder();window.print()}
+function clearAll(){order={};selectedReasons=[];renderProducts();renderOrder()}
+async function initData(){
+  const r1=await loadCSVFromData('customer.csv',setCustomers);
+  const r2=await loadCSVFromData('product.csv',setProducts);
+  const r3=await loadCSVFromData('Reason.csv',setReasons);
+  setStatus([{file:'customer.csv',...r1},{file:'product.csv',...r2},{file:'Reason.csv',...r3}]);
+  if(!customers.length) customerSelect.innerHTML='<option value="">customer.csv me data nahi mila</option>';
+  if(!products.length) groupSelect.innerHTML='<option value="">product.csv me data nahi mila</option>';
+  if(!reasons.length) reasonSelect.innerHTML='<option value="">Reason.csv me data nahi mila</option>';
+  renderOrder();
+}
+initData();
+</script>
+</body>
+</html>

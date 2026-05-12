@@ -1,0 +1,4 @@
+Group,Code,Description,Stock,Unit,Rate,Mrp,Gst
+Demo Group,P001,Demo Product,10,PCS,100,120,18
+Demo2,P002,Demo Product,50,Box,120,150,5
+Demo3,P003,Demo Product,20,Ltr,150,170,18
