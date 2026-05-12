@@ -23,9 +23,9 @@
 </header>
 <main>
   <div class="grid">
-    <section class="card noPrint"><h2>Data Status</h2>
-      <div id="dataStatus" class="box">Data folder se CSV load ho raha hai...</div>
-      <p class="muted">Aap sirf <b>data/customer.csv</b>, <b>data/product.csv</b>, aur <b>data/Reason.csv</b> me data change kare. Page refresh karte hi updated data dropdown me aa jayega.</p>
+    <section class="card noPrint"><h2>Area Selection</h2>
+      <label>Area</label><select id="areaSelect"><option value="">customer.csv load ho raha hai...</option></select>
+      <div class="box" style="margin-top:12px">Area select karne ke baad us area ki party Customer Selection me show hogi.</div>
     </section>
 
     <section class="card noPrint"><h2>Customer Selection</h2>
@@ -63,29 +63,46 @@
 <script>
 const WA_NUMBER='917046533330'; let customers=[],products=[],reasons=[],order={},selectedReasons=[];
 const money=n=>'₹'+(Number(n||0).toFixed(2)); const clean=s=>(s??'').toString().trim();
-function parseCSV(text){const rows=[];let row=[],cur='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'){if(q&&n==='"'){cur+='"';i++}else q=!q}else if(c===','&&!q){row.push(cur);cur=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);row=[];cur=''}else cur+=c}row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);if(!rows.length)return[];const head=rows[0].map(h=>clean(h));return rows.slice(1).map(r=>{let o={};head.forEach((h,i)=>o[h]=clean(r[i]));return o})}
-async function loadCSVFromData(fileName, cb){
-  try{
-    const res = await fetch('data/' + fileName + '?v=' + Date.now());
-    if(!res.ok) throw new Error(fileName + ' not found');
-    const text = await res.text();
-    const data = parseCSV(text);
-    cb(data);
-    return {ok:true,count:data.length};
-  }catch(e){
-    return {ok:false,error:e.message};
+function parseCSV(text){text=(text||'').replace(/^\uFEFF/,'');const rows=[];let row=[],cur='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'){if(q&&n==='"'){cur+='"';i++}else q=!q}else if(c===','&&!q){row.push(cur);cur=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);row=[];cur=''}else cur+=c}row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);if(!rows.length)return[];const head=rows[0].map(h=>clean(h).replace(/^\uFEFF/,''));return rows.slice(1).map(r=>{let o={};head.forEach((h,i)=>o[h]=clean(r[i]));return o})}
+async function loadCSVFromData(fileNames, cb){
+  const names = Array.isArray(fileNames) ? fileNames : [fileNames];
+  let lastError = '';
+  for(const fileName of names){
+    try{
+      const res = await fetch('data/' + fileName + '?v=' + Date.now(), {cache:'no-store'});
+      if(!res.ok) throw new Error(fileName + ' not found');
+      const text = await res.text();
+      const data = parseCSV(text);
+      cb(data);
+      return {ok:true,count:data.length,used:fileName};
+    }catch(e){ lastError = e.message; }
   }
+  return {ok:false,error:lastError};
 }
-function setStatus(results){
-  const ok = results.filter(r=>r.ok).length;
-  dataStatus.innerHTML = results.map(r=> r.ok ? `<b>✅ ${r.file}</b>: ${r.count} records loaded` : `<b>❌ ${r.file}</b>: load nahi hua`).join('<br>') + (ok<3 ? '<br><br><span class="muted">Note: Agar HTML ko direct file double-click se open kar rahe ho aur data load nahi ho raha, folder ko local server/hosting par open kare. CSV files data folder me same name se honi chahiye.</span>' : '');
+function setCustomers(d){customers=d; populateAreaSelect(); populateCustomerSelect()}
+function getArea(c){return val(c,['Area','area','AREA'])}
+function populateAreaSelect(){
+  const areas=[...new Set(customers.map(getArea).filter(Boolean))];
+  areaSelect.innerHTML='<option value="">All Area</option>'+areas.map(a=>`<option>${a}</option>`).join('');
 }
-function setCustomers(d){customers=d; customerSelect.innerHTML='<option value="">Select Customer</option>'+d.map((c,i)=>`<option value="${i}">${val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]||'Customer '+(i+1)}</option>`).join('')}
+function populateCustomerSelect(){
+  const selectedArea=areaSelect.value;
+  const opts=[];
+  customers.forEach((c,i)=>{
+    if(selectedArea && getArea(c)!==selectedArea) return;
+    const name=val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]||'Customer '+(i+1);
+    opts.push(`<option value="${i}">${name}</option>`);
+  });
+  customerSelect.innerHTML='<option value="">Select Customer</option>'+opts.join('');
+  customerInfo.textContent='Customer detail yaha show hogi.';
+  renderOrder();
+}
 function setProducts(d){products=d; const gs=[...new Set(d.map(p=>val(p,['Group','Product Group','Brand'])).filter(Boolean))]; groupSelect.innerHTML='<option value="">All Groups</option>'+gs.map(g=>`<option>${g}</option>`).join(''); renderProducts()}
 function setReasons(d){reasons=d.map(r=>val(r,['Reason','reason'])||Object.values(r)[0]).filter(Boolean); reasonSelect.innerHTML='<option value="">Select Reason</option>'+reasons.map(r=>`<option>${r}</option>`).join('')}
 
 function keys(o){return Object.keys(o||{})} function val(o,names){let ks=keys(o);for(const n of names){let k=ks.find(x=>x.toLowerCase()===n.toLowerCase());if(k)return o[k]} return ''}
-customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Customer detail yaha show hogi.';return} customerInfo.innerHTML=keys(c).map(k=>`<b>${k}:</b> ${c[k]}`).join('<br>'); renderOrder()};
+areaSelect.onchange=()=>{populateCustomerSelect()};
+customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Customer detail yaha show hogi.';renderOrder();return} customerInfo.innerHTML=keys(c).map(k=>`<b>${k}:</b> ${c[k]}`).join('<br>'); renderOrder()};
 groupSelect.onchange=renderProducts; productSearch.oninput=renderProducts;
 function productId(p,i){return (val(p,['Code'])||i)+'__'+i} function qtyOf(id){return order[id]?.qty||0}
 function renderProducts(){let g=groupSelect.value, s=productSearch.value.toLowerCase();let tb=document.querySelector('#productTable tbody');tb.innerHTML='';products.forEach((p,i)=>{let gid=val(p,['Group','Product Group','Brand']);let code=val(p,['Code']);let desc=val(p,['Description','Product','Item']); if(g&&gid!==g)return; if(s&&!((code+' '+desc).toLowerCase().includes(s)))return;let id=productId(p,i);tb.insertAdjacentHTML('beforeend',`<tr><td>${gid}</td><td>${code}</td><td>${desc}</td><td>${val(p,['Stock'])}</td><td>${val(p,['Unit'])}</td><td>${val(p,['Rate'])}</td><td>${val(p,['Mrp','MRP'])}</td><td>${val(p,['Gst','GST'])}</td><td><div class="qtybox"><button class="minus" onclick="chgQty('${id}',-1)">−</button><span>${qtyOf(id)}</span><button onclick="chgQty('${id}',1)">+</button></div></td></tr>`)})}
@@ -101,11 +118,10 @@ function shareReportWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${en
 function downloadPDF(){renderOrder();window.print()}
 function clearAll(){order={};selectedReasons=[];renderProducts();renderOrder()}
 async function initData(){
-  const r1=await loadCSVFromData('customer.csv',setCustomers);
-  const r2=await loadCSVFromData('product.csv',setProducts);
-  const r3=await loadCSVFromData('Reason.csv',setReasons);
-  setStatus([{file:'customer.csv',...r1},{file:'product.csv',...r2},{file:'Reason.csv',...r3}]);
-  if(!customers.length) customerSelect.innerHTML='<option value="">customer.csv me data nahi mila</option>';
+  const r1=await loadCSVFromData(['customer.csv','Customer.csv','CUSTOMER.csv'],setCustomers);
+  const r2=await loadCSVFromData(['product.csv','Product.csv','PRODUCT.csv','produc.csv','Produc.csv'],setProducts);
+  const r3=await loadCSVFromData(['Reason.csv','reason.csv','REASON.csv'],setReasons);
+  if(!customers.length){ customerSelect.innerHTML='<option value="">customer.csv me data nahi mila</option>'; areaSelect.innerHTML='<option value="">customer.csv me data nahi mila</option>'; }
   if(!products.length) groupSelect.innerHTML='<option value="">product.csv me data nahi mila</option>';
   if(!reasons.length) reasonSelect.innerHTML='<option value="">Reason.csv me data nahi mila</option>';
   renderOrder();
