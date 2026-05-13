@@ -14,7 +14,7 @@
     table{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eaf4ff;color:#063b7a}.qtybox{display:flex;align-items:center;gap:8px}.qtybox button{width:34px;height:34px;border:0;border-radius:50%;font-size:22px;font-weight:900;color:#fff;background:var(--blue)}.qtybox .minus{background:var(--danger)}.pill{display:inline-block;padding:5px 10px;background:#fff4cc;border-radius:999px;font-weight:700;color:#7a4b00}.muted{color:var(--muted);font-size:13px}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.box{background:#f8fbff;border:1px solid #dbeafe;border-radius:14px;padding:12px}.box b{display:block;font-size:20px;color:var(--blue)}.reason-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tag{background:#eaf4ff;border:1px solid #93c5fd;border-radius:999px;padding:8px 11px;font-weight:700}.tag button{margin-left:8px;border:0;background:transparent;color:var(--danger);font-weight:900;cursor:pointer}.hide{display:none}.printArea{background:white;padding:18px;border-radius:18px}.watermark{opacity:.08;position:absolute;right:30px;top:20px;width:250px}.relative{position:relative;overflow:hidden}
 
     .tourPlanWrap{margin-top:18px;border-top:1px solid #dbeafe;padding-top:14px}
-    .tourControls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .tourControls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
     .tourDays{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
     .tourDay{border:1px solid #dbeafe;border-radius:12px;background:#f8fbff;min-height:86px;padding:7px;font-size:12px}
     .tourDay .d{font-weight:900;color:var(--blue);margin-bottom:4px}
@@ -38,9 +38,11 @@
         <h2 style="font-size:20px;margin-top:0">Monthly Tour Chart</h2>
         <div class="tourControls">
           <div><label>Month</label><input id="tourMonth" type="month"></div>
-          <div><label>Quick Add City / Area</label><input id="tourQuickCity" placeholder="Example: Ankleshwar/Kim/Karanj"></div>
+          <div><label>Tour Date</label><input id="tourDate" type="date"></div>
+          <div><label>City Add</label><select id="tourCitySelect"><option value="">City select kare</option></select></div>
         </div>
-        <div class="actions"><button class="btn gold" onclick="fillSelectedCityToToday()">Selected City Today Add</button><button class="btn" onclick="saveTourPlan()">Save Tour Plan</button><button class="btn green" onclick="shareTourPlanWhatsApp()">Tour Plan WhatsApp</button></div>
+        <div class="actions"><button class="btn gold" onclick="addSelectedTourCity()">Add City</button><button class="btn green" onclick="submitTourPlanToGoogleSheet()">Submit Tour Plan</button></div>
+        <div id="tourSubmitStatus" class="submitStatus"></div>
         <div class="tourWeekHead"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
         <div id="tourDays" class="tourDays"></div>
       </div>
@@ -84,8 +86,11 @@
 </main>
 <script>
 const WA_NUMBER='917046533330';
-// Google Apps Script Web App URL yaha paste kare. Example: https://script.google.com/macros/s/XXXX/exec
-const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzoKuDwBvaB7UHNO4RX9NoqzujjyT-FRhaULEtJ0OK9JBCO6eBf26udcoKDU7K1QltU/exec';
+// Google Apps Script Web App URLs
+// DSR Report submit ke liye
+const DSR_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzoKuDwBvaB7UHNO4RX9NoqzujjyT-FRhaULEtJ0OK9JBCO6eBf26udcoKDU7K1QltU/exec';
+// Tour Plan submit ke liye
+const TOUR_PLAN_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwsJbFCJMrW147F98I5n4TjXoKeSNb4_MXZHfFSabYvqRiqgeKxjbkBC9kGlDbtRwI7qg/exec';
 let customers=[],products=[],reasons=[],order={},selectedReasons=[],productPage=1; const PRODUCT_PAGE_SIZE=15;
 const money=n=>'₹'+(Number(n||0).toFixed(2)); const clean=s=>(s??'').toString().trim();
 function parseCSV(text){text=(text||'').replace(/^\uFEFF/,'');const rows=[];let row=[],cur='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'){if(q&&n==='"'){cur+='"';i++}else q=!q}else if(c===','&&!q){row.push(cur);cur=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);row=[];cur=''}else cur+=c}row.push(cur);if(row.some(x=>clean(x)!==''))rows.push(row);if(!rows.length)return[];const head=rows[0].map(h=>clean(h).replace(/^\uFEFF/,''));return rows.slice(1).map(r=>{let o={};head.forEach((h,i)=>o[h]=clean(r[i]));return o})}
@@ -109,6 +114,8 @@ function getCity(c){return val(c,['City','city','CITY','Area','area','AREA'])}
 function populateCitySelect(){
   const cities=[...new Set(customers.map(getCity).filter(Boolean))];
   areaSelect.innerHTML='<option value="">All City</option>'+cities.map(a=>`<option>${a}</option>`).join('');
+  const tc=document.getElementById('tourCitySelect');
+  if(tc) tc.innerHTML='<option value="">City select kare</option>'+cities.map(a=>`<option>${a}</option>`).join('');
 }
 function populateCustomerSelect(){
   const selectedCity=areaSelect.value;
@@ -191,11 +198,11 @@ async function submitDSRToGoogleSheet(){
   const status=document.getElementById('submitStatus');
   const c=getSelectedCustomer();
   if(!c){status.className='submitStatus err';status.textContent='Pehle Name select kare.';return}
-  if(GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE_SCRIPT')){status.className='submitStatus err';status.textContent='HTML me GOOGLE_SCRIPT_URL paste karna baki hai.';return}
+  if(!DSR_SCRIPT_URL || DSR_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE_SCRIPT')){status.className='submitStatus err';status.textContent='HTML me DSR_SCRIPT_URL paste karna baki hai.';return}
   const payload=buildDSRPayload();
   status.className='submitStatus';status.textContent='Submitting...';
   try{
-    await fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+    await fetch(DSR_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
     status.className='submitStatus ok';status.textContent='DSR Google Sheet me submit ho gaya.';
   }catch(e){
     status.className='submitStatus err';status.textContent='Submit error: '+e.message;
@@ -205,7 +212,12 @@ async function submitDSRToGoogleSheet(){
 
 function pad2(n){return String(n).padStart(2,'0')}
 function tourKey(){return 'rajgroup_luman_tour_'+(tourMonth.value||'')}
-function initTourMonth(){const d=new Date();tourMonth.value=d.getFullYear()+'-'+pad2(d.getMonth()+1);renderTourCalendar()}
+function initTourMonth(){
+  const d=new Date();
+  tourMonth.value=d.getFullYear()+'-'+pad2(d.getMonth()+1);
+  if(document.getElementById('tourDate')) tourDate.value=d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());
+  renderTourCalendar();
+}
 function renderTourCalendar(){
   const box=document.getElementById('tourDays'); if(!box||!tourMonth.value)return;
   const [y,m]=tourMonth.value.split('-').map(Number);
@@ -224,21 +236,54 @@ function saveTourPlan(){
   const data={}; document.querySelectorAll('#tourDays textarea').forEach(t=>{ if(clean(t.value)) data[t.dataset.day]=clean(t.value); });
   if(tourMonth.value) localStorage.setItem(tourKey(),JSON.stringify(data));
 }
-function fillSelectedCityToToday(){
-  const d=new Date(), month=d.getFullYear()+'-'+pad2(d.getMonth()+1);
-  if(tourMonth.value!==month){tourMonth.value=month;renderTourCalendar()}
-  const text=clean(tourQuickCity.value)||clean(areaSelect.value);
-  if(!text)return;
-  const t=document.querySelector(`#tourDays textarea[data-day="${pad2(d.getDate())}"]`);
-  if(t){t.value=t.value? t.value+' / '+text : text; saveTourPlan()}
+function setMonthFromTourDate(){
+  if(!tourDate.value) return;
+  const m=tourDate.value.slice(0,7);
+  if(tourMonth.value!==m){ tourMonth.value=m; renderTourCalendar(); }
+}
+function addSelectedTourCity(){
+  setMonthFromTourDate();
+  const city=clean(tourCitySelect.value);
+  if(!tourDate.value){alert('Pehle date select kare.');return;}
+  if(!city){alert('Pehle city select kare.');return;}
+  const day=pad2(Number(tourDate.value.slice(8,10)));
+  const t=document.querySelector(`#tourDays textarea[data-day="${day}"]`);
+  if(t){
+    const old=clean(t.value);
+    const parts=old ? old.split(/\s*\/\s*|\n/).map(clean).filter(Boolean) : [];
+    if(!parts.includes(city)) parts.push(city);
+    t.value=parts.join(' / ');
+    saveTourPlan();
+  }
+}
+function getTourPlanData(){
+  saveTourPlan();
+  const data=JSON.parse(localStorage.getItem(tourKey())||'{}');
+  const [y,m]=tourMonth.value.split('-').map(Number);
+  return Object.keys(data).sort().map(day=>{
+    const dt=new Date(y,m-1,Number(day));
+    return {date:`${day}-${pad2(m)}-${y}`, isoDate:`${y}-${pad2(m)}-${day}`, dayName:dt.toLocaleDateString('en-IN',{weekday:'long'}), plan:data[day]};
+  });
 }
 function getTourPlanText(){
-  saveTourPlan(); const data=JSON.parse(localStorage.getItem(tourKey())||'{}');
   const lines=[`RAJ GROUP Tour Plan - LUMAN`, `Month: ${tourMonth.value}`];
-  Object.keys(data).sort().forEach(d=>lines.push(`${d}: ${data[d]}`));
+  getTourPlanData().forEach(r=>lines.push(`${r.date} (${r.dayName}): ${r.plan}`));
   return lines.join('\n');
 }
-function shareTourPlanWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(getTourPlanText())}`,'_blank')}
+async function submitTourPlanToGoogleSheet(){
+  const status=document.getElementById('tourSubmitStatus');
+  const rows=getTourPlanData();
+  if(!rows.length){status.className='submitStatus err';status.textContent='Tour plan blank hai. Pehle city add kare.';return;}
+  if(!TOUR_PLAN_SCRIPT_URL || TOUR_PLAN_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE_SCRIPT')){status.className='submitStatus err';status.textContent='HTML me TOUR_PLAN_SCRIPT_URL paste karna baki hai.';return;}
+  status.className='submitStatus';status.textContent='Submitting tour plan...';
+  const payload={type:'tourPlan',timestamp:new Date().toLocaleString('en-IN'),isoTime:new Date().toISOString(),month:tourMonth.value,rows:rows,planText:getTourPlanText()};
+  try{
+    await fetch(TOUR_PLAN_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+    status.className='submitStatus ok';status.textContent='Tour Plan Google Sheet me submit ho gaya.';
+  }catch(e){
+    status.className='submitStatus err';status.textContent='Submit error: '+e.message;
+  }
+}
 
 function placeOrderWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('order'))}`,'_blank')}
 function shareReportWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('report'))}`,'_blank')}
@@ -256,6 +301,7 @@ async function initData(){
 initData();
 initTourMonth();
 tourMonth.addEventListener('change',renderTourCalendar);
+if(document.getElementById('tourDate')) tourDate.addEventListener('change',setMonthFromTourDate);
 </script>
 </body>
 </html>
