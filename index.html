@@ -12,6 +12,15 @@
     main{max-width:1200px;margin:22px auto;padding:0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border-radius:20px;padding:18px;box-shadow:0 8px 26px #0b3b7a18;border:1px solid #dbeafe}.full{grid-column:1/-1}h2{margin:0 0 14px;color:var(--blue);font-size:22px;border-left:7px solid var(--gold);padding-left:10px}
     label{font-weight:700;margin:10px 0 6px;display:block}select,input,textarea{width:100%;padding:12px;border:1px solid #bfdbfe;border-radius:12px;font-size:15px;background:#fff}textarea{min-height:82px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--blue2),var(--blue));box-shadow:0 5px 14px #0066cc33}.btn.gold{background:linear-gradient(90deg,var(--gold),#ff8c00);color:#111}.btn.green{background:linear-gradient(90deg,#22c55e,#15803d)}.btn.red{background:linear-gradient(90deg,#ef4444,#b91c1c)}.btn.gray{background:#475569}.btn.call{background:linear-gradient(90deg,#10b981,#047857);text-decoration:none;display:inline-block}.btn.whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);text-decoration:none;display:inline-block}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     table{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eaf4ff;color:#063b7a}.qtybox{display:flex;align-items:center;gap:8px}.qtybox button{width:34px;height:34px;border:0;border-radius:50%;font-size:22px;font-weight:900;color:#fff;background:var(--blue)}.qtybox .minus{background:var(--danger)}.pill{display:inline-block;padding:5px 10px;background:#fff4cc;border-radius:999px;font-weight:700;color:#7a4b00}.muted{color:var(--muted);font-size:13px}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.box{background:#f8fbff;border:1px solid #dbeafe;border-radius:14px;padding:12px}.box b{display:block;font-size:20px;color:var(--blue)}.reason-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tag{background:#eaf4ff;border:1px solid #93c5fd;border-radius:999px;padding:8px 11px;font-weight:700}.tag button{margin-left:8px;border:0;background:transparent;color:var(--danger);font-weight:900;cursor:pointer}.hide{display:none}.printArea{background:white;padding:18px;border-radius:18px}.watermark{opacity:.08;position:absolute;right:30px;top:20px;width:250px}.relative{position:relative;overflow:hidden}
+
+    .tourPlanWrap{margin-top:18px;border-top:1px solid #dbeafe;padding-top:14px}
+    .tourControls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .tourDays{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+    .tourDay{border:1px solid #dbeafe;border-radius:12px;background:#f8fbff;min-height:86px;padding:7px;font-size:12px}
+    .tourDay .d{font-weight:900;color:var(--blue);margin-bottom:4px}
+    .tourDay textarea{min-height:46px;padding:6px;border-radius:8px;font-size:12px;resize:vertical}
+    .tourWeekHead{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:10px 0 6px}.tourWeekHead div{text-align:center;font-weight:900;color:#063b7a;font-size:12px}
+    @media(max-width:700px){.tourControls{grid-template-columns:1fr}.tourDays,.tourWeekHead{grid-template-columns:1fr}.tourWeekHead{display:none}}
     @media(max-width:850px){.grid,.row{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.head{align-items:center;gap:10px}.title h1{font-size:20px}.logo{width:70px}.brandLogo{width:92px;height:58px}}
     @media print{body{background:#fff}header,.noPrint,.card:not(.printable){display:none!important}main{margin:0;max-width:none}.printable{box-shadow:none;border:0}.printArea{padding:0}button,input,select,textarea{display:none!important}.hidePrint{display:none!important}table{page-break-inside:auto}tr{page-break-inside:avoid}.printOnly{display:block!important}}
     .printOnly{display:none}.pager{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap}.pager button{border:0;border-radius:10px;padding:9px 14px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--blue2),var(--blue))}.pager button:disabled{background:#cbd5e1;cursor:not-allowed}.pager span{font-weight:800;color:var(--blue)}.detailGrid{display:grid;grid-template-columns:150px 1fr;gap:8px 12px}.detailGrid b{color:var(--blue)}.submitStatus{font-weight:800;margin-top:10px}.submitStatus.ok{color:var(--ok)}.submitStatus.err{color:var(--danger)}@media(max-width:600px){.detailGrid{grid-template-columns:1fr}}
@@ -25,6 +34,16 @@
   <div class="grid">
     <section class="card noPrint"><h2>City Selection</h2>
       <label>City</label><select id="areaSelect"><option value="">customer.csv load ho raha hai...</option></select>
+      <div class="tourPlanWrap">
+        <h2 style="font-size:20px;margin-top:0">Monthly Tour Chart</h2>
+        <div class="tourControls">
+          <div><label>Month</label><input id="tourMonth" type="month"></div>
+          <div><label>Quick Add City / Area</label><input id="tourQuickCity" placeholder="Example: Ankleshwar/Kim/Karanj"></div>
+        </div>
+        <div class="actions"><button class="btn gold" onclick="fillSelectedCityToToday()">Selected City Today Add</button><button class="btn" onclick="saveTourPlan()">Save Tour Plan</button><button class="btn green" onclick="shareTourPlanWhatsApp()">Tour Plan WhatsApp</button></div>
+        <div class="tourWeekHead"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+        <div id="tourDays" class="tourDays"></div>
+      </div>
     </section>
 
     <section class="card noPrint"><h2>Name Selection</h2>
@@ -183,6 +202,44 @@ async function submitDSRToGoogleSheet(){
   }
 }
 
+
+function pad2(n){return String(n).padStart(2,'0')}
+function tourKey(){return 'rajgroup_luman_tour_'+(tourMonth.value||'')}
+function initTourMonth(){const d=new Date();tourMonth.value=d.getFullYear()+'-'+pad2(d.getMonth()+1);renderTourCalendar()}
+function renderTourCalendar(){
+  const box=document.getElementById('tourDays'); if(!box||!tourMonth.value)return;
+  const [y,m]=tourMonth.value.split('-').map(Number);
+  const first=new Date(y,m-1,1), days=new Date(y,m,0).getDate();
+  const saved=JSON.parse(localStorage.getItem(tourKey())||'{}');
+  let html='';
+  for(let blank=0; blank<first.getDay(); blank++) html+='<div class="tourDay" style="background:#fff;border-color:transparent"></div>';
+  for(let d=1; d<=days; d++){
+    const key=pad2(d);
+    html+=`<div class="tourDay"><div class="d">${key}</div><textarea data-day="${key}" placeholder="City / Area plan">${saved[key]||''}</textarea></div>`;
+  }
+  box.innerHTML=html;
+  box.querySelectorAll('textarea').forEach(t=>t.addEventListener('input',saveTourPlan));
+}
+function saveTourPlan(){
+  const data={}; document.querySelectorAll('#tourDays textarea').forEach(t=>{ if(clean(t.value)) data[t.dataset.day]=clean(t.value); });
+  if(tourMonth.value) localStorage.setItem(tourKey(),JSON.stringify(data));
+}
+function fillSelectedCityToToday(){
+  const d=new Date(), month=d.getFullYear()+'-'+pad2(d.getMonth()+1);
+  if(tourMonth.value!==month){tourMonth.value=month;renderTourCalendar()}
+  const text=clean(tourQuickCity.value)||clean(areaSelect.value);
+  if(!text)return;
+  const t=document.querySelector(`#tourDays textarea[data-day="${pad2(d.getDate())}"]`);
+  if(t){t.value=t.value? t.value+' / '+text : text; saveTourPlan()}
+}
+function getTourPlanText(){
+  saveTourPlan(); const data=JSON.parse(localStorage.getItem(tourKey())||'{}');
+  const lines=[`RAJ GROUP Tour Plan - LUMAN`, `Month: ${tourMonth.value}`];
+  Object.keys(data).sort().forEach(d=>lines.push(`${d}: ${data[d]}`));
+  return lines.join('\n');
+}
+function shareTourPlanWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(getTourPlanText())}`,'_blank')}
+
 function placeOrderWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('order'))}`,'_blank')}
 function shareReportWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('report'))}`,'_blank')}
 function downloadPDF(){renderOrder();window.print()}
@@ -197,6 +254,8 @@ async function initData(){
   renderOrder();
 }
 initData();
+initTourMonth();
+tourMonth.addEventListener('change',renderTourCalendar);
 </script>
 </body>
 </html>
