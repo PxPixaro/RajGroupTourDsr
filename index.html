@@ -84,7 +84,7 @@
       <h2 style="margin-top:18px">DSR Activity</h2>
       <div id="dsrReport" class="box">No reason selected.</div>
     </div>
-      <div class="actions noPrint"><button class="btn green" onclick="placeOrderWhatsApp()">Place Order WhatsApp</button><button class="btn gold" onclick="downloadPDF()">Order PDF Download</button><button class="btn" onclick="shareReportWhatsApp()">DSR Report WhatsApp</button><button class="btn green" onclick="submitDSRToGoogleSheet()">Submit DSR Google Sheet</button><button class="btn red" onclick="clearAll()">Clear</button></div>
+      <div class="actions noPrint"><button class="btn green" onclick="placeOrderWhatsApp()">Place Order WhatsApp</button><button class="btn gold" onclick="downloadPDF()">Order PDF Download</button><button class="btn" onclick="shareReportWhatsApp()">DSR Report WhatsApp</button><button class="btn green" onclick="submitDSRToGoogleSheet()">Submit DSR Google Sheet</button><button class="btn red" onclick="clearAll()">Clear All</button></div>
       <p class="muted noPrint">PDF button browser print dialog kholega; Save as PDF select kare. WhatsApp par text direct jayega, PDF attach manually karna hota hai.</p>
     </section>
   </div>
@@ -305,7 +305,31 @@ async function submitTourPlanToGoogleSheet(){
 function placeOrderWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('order'))}`,'_blank')}
 function shareReportWhatsApp(){window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText('report'))}`,'_blank')}
 function downloadPDF(){renderOrder();window.print()}
-function clearAll(){order={};selectedReasons=[];otherReason.value='';reminderDate.value='';reminderNote.value='';submitStatus.textContent='';submitStatus.className='submitStatus';renderProducts();renderOrder()}
+function clearAll(){
+  order={};
+  selectedReasons=[];
+  productPage=1;
+  if(areaSelect) areaSelect.value='';
+  populateCustomerSelect();
+  if(customerSelect) customerSelect.value='';
+  if(groupSelect) groupSelect.value='';
+  if(productSearch) productSearch.value='';
+  if(reasonSelect) reasonSelect.value='';
+  if(otherReason) otherReason.value='';
+  if(reminderDate) reminderDate.value='';
+  if(reminderNote) reminderNote.value='';
+  if(tourDate) tourDate.value='';
+  if(tourCitySelect) tourCitySelect.value='';
+  const ts=document.getElementById('tourSubmitStatus');
+  if(ts){ts.textContent='';ts.className='submitStatus';}
+  submitStatus.textContent='';
+  submitStatus.className='submitStatus';
+  customerInfo.textContent='Name select karte hi party detail yaha show hogi.';
+  renderProducts();
+  renderReasons();
+  renderOrder();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 async function initData(){
   const r1=await loadCSVFromData(['customer.csv','Customer.csv','CUSTOMER.csv'],setCustomers);
   const r2=await loadCSVFromData(['product.csv','Product.csv','PRODUCT.csv','produc.csv','Produc.csv'],setProducts);
