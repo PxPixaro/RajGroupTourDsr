@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAJGROUP Tour Order Plan</title>
+  <title>RAJ GROUP Tour Plan - LUMAN</title>
   <style>
     :root{--blue:#005cbd;--blue2:#0096ff;--gold:#ffb400;--gold2:#ffe55c;--dark:#172033;--muted:#64748b;--bg:#f5f8ff;--card:#fff;--danger:#dc2626;--ok:#16a34a}
     *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f7fbff,#fff8df);color:var(--dark)}
     header{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--blue2),var(--blue));padding:18px;color:#fff;box-shadow:0 6px 20px #0002;position:sticky;top:0;z-index:5}
-    .head{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px}.logo{width:92px;height:68px;object-fit:contain;background:white;border-radius:14px;padding:6px;box-shadow:0 4px 12px #0003}.title h1{margin:0;font-size:30px;text-shadow:0 2px 3px #0005}.title p{margin:4px 0 0;font-weight:700;letter-spacing:.5px}
+    .head{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px}.logo{width:92px;height:68px;object-fit:contain;background:white;border-radius:14px;padding:6px;box-shadow:0 4px 12px #0003}.title{flex:1}.title h1{margin:0;font-size:30px;text-shadow:0 2px 3px #0005}.title p{margin:4px 0 0;font-weight:700;letter-spacing:.5px}.brandLogo{width:150px;height:68px;object-fit:contain;background:white;border-radius:14px;padding:6px;box-shadow:0 4px 12px #0003}
     main{max-width:1200px;margin:22px auto;padding:0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border-radius:20px;padding:18px;box-shadow:0 8px 26px #0b3b7a18;border:1px solid #dbeafe}.full{grid-column:1/-1}h2{margin:0 0 14px;color:var(--blue);font-size:22px;border-left:7px solid var(--gold);padding-left:10px}
-    label{font-weight:700;margin:10px 0 6px;display:block}select,input,textarea{width:100%;padding:12px;border:1px solid #bfdbfe;border-radius:12px;font-size:15px;background:#fff}textarea{min-height:82px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--blue2),var(--blue));box-shadow:0 5px 14px #0066cc33}.btn.gold{background:linear-gradient(90deg,var(--gold),#ff8c00);color:#111}.btn.green{background:linear-gradient(90deg,#22c55e,#15803d)}.btn.red{background:linear-gradient(90deg,#ef4444,#b91c1c)}.btn.gray{background:#475569}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    label{font-weight:700;margin:10px 0 6px;display:block}select,input,textarea{width:100%;padding:12px;border:1px solid #bfdbfe;border-radius:12px;font-size:15px;background:#fff}textarea{min-height:82px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--blue2),var(--blue));box-shadow:0 5px 14px #0066cc33}.btn.gold{background:linear-gradient(90deg,var(--gold),#ff8c00);color:#111}.btn.green{background:linear-gradient(90deg,#22c55e,#15803d)}.btn.red{background:linear-gradient(90deg,#ef4444,#b91c1c)}.btn.gray{background:#475569}.btn.call{background:linear-gradient(90deg,#10b981,#047857);text-decoration:none;display:inline-block}.btn.whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);text-decoration:none;display:inline-block}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     table{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border-radius:14px;overflow:hidden}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eaf4ff;color:#063b7a}.qtybox{display:flex;align-items:center;gap:8px}.qtybox button{width:34px;height:34px;border:0;border-radius:50%;font-size:22px;font-weight:900;color:#fff;background:var(--blue)}.qtybox .minus{background:var(--danger)}.pill{display:inline-block;padding:5px 10px;background:#fff4cc;border-radius:999px;font-weight:700;color:#7a4b00}.muted{color:var(--muted);font-size:13px}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.box{background:#f8fbff;border:1px solid #dbeafe;border-radius:14px;padding:12px}.box b{display:block;font-size:20px;color:var(--blue)}.reason-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tag{background:#eaf4ff;border:1px solid #93c5fd;border-radius:999px;padding:8px 11px;font-weight:700}.tag button{margin-left:8px;border:0;background:transparent;color:var(--danger);font-weight:900;cursor:pointer}.hide{display:none}.printArea{background:white;padding:18px;border-radius:18px}.watermark{opacity:.08;position:absolute;right:30px;top:20px;width:250px}.relative{position:relative;overflow:hidden}
-    @media(max-width:850px){.grid,.row{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.head{align-items:flex-start}.title h1{font-size:23px}.logo{width:76px}}
+    @media(max-width:850px){.grid,.row{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.head{align-items:center;gap:10px}.title h1{font-size:20px}.logo{width:70px}.brandLogo{width:92px;height:58px}}
     @media print{body{background:#fff}header,.noPrint,.card:not(.printable){display:none!important}main{margin:0;max-width:none}.printable{box-shadow:none;border:0}.printArea{padding:0}button,input,select,textarea{display:none!important}.hidePrint{display:none!important}table{page-break-inside:auto}tr{page-break-inside:avoid}.printOnly{display:block!important}}
     .printOnly{display:none}.pager{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap}.pager button{border:0;border-radius:10px;padding:9px 14px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--blue2),var(--blue))}.pager button:disabled{background:#cbd5e1;cursor:not-allowed}.pager span{font-weight:800;color:var(--blue)}.detailGrid{display:grid;grid-template-columns:150px 1fr;gap:8px 12px}.detailGrid b{color:var(--blue)}.submitStatus{font-weight:800;margin-top:10px}.submitStatus.ok{color:var(--ok)}.submitStatus.err{color:var(--danger)}@media(max-width:600px){.detailGrid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <header>
-  <div class="head"><img class="logo" id="logo" src="assets/LOGO.png" onerror="this.onerror=null;this.src='LOGO.png'" alt="RAJGROUP Logo"><div class="title"><h1>RAJGROUP Tour Order Plan</h1><p>LET’S GROW TOGETHER</p></div></div>
+  <div class="head"><img class="logo" id="logo" src="assets/LOGO.png" onerror="this.onerror=null;this.src='LOGO.png'" alt="RAJGROUP Logo"><div class="title"><h1>RAJ GROUP Tour Plan - LUMAN</h1><p>LET’S GROW TOGETHER</p></div><img class="brandLogo" src="assets/LUMAN.jpg" onerror="this.onerror=null;this.src='LUMAN.jpg'" alt="LUMAN Logo"></div>
 </header>
 <main>
   <div class="grid">
@@ -44,7 +44,7 @@
       <div class="actions"><button class="btn gold" onclick="addReason()">Add Reason</button></div>
       <label>Other Reason</label><textarea id="otherReason" placeholder="Salesman manual reason likhe"></textarea>
       <div class="actions"><button class="btn" onclick="addOtherReason()">Add Other Reason</button></div>
-      <label>Next Reminder / Follow-up Date</label><input id="reminderDate" type="datetime-local">
+      <label>Next Reminder / Follow-up Date</label><input id="reminderDate" type="date">
       <label>Reminder Note</label><textarea id="reminderNote" placeholder="Aagli baar call / visit ke liye note"></textarea>
       <div id="reasonTags" class="reason-list"></div>
       <div id="submitStatus" class="submitStatus"></div>
@@ -110,6 +110,9 @@ function setReasons(d){reasons=d.map(r=>val(r,['Reason','reason'])||Object.value
 function keys(o){return Object.keys(o||{})} function val(o,names){let ks=keys(o);for(const n of names){let k=ks.find(x=>x.toLowerCase()===n.toLowerCase());if(k)return o[k]} return ''}
 areaSelect.onchange=()=>{populateCustomerSelect()};
 customerSelect.onchange=()=>{let c=customers[customerSelect.value]; if(!c){customerInfo.textContent='Name select karte hi party detail yaha show hogi.';renderOrder();return} showCustomerDetail(c); renderOrder()};
+function getMobileNumbers(text){
+  return (text||'').toString().split(/[^0-9]+/).map(x=>x.trim()).filter(x=>x.length>=10).map(x=>x.slice(-10));
+}
 function showCustomerDetail(c){
   const preferred=['City','Area','Name','Sales','OD','Segment','Mobile','No','Remark','Address'];
   const shown=[];
@@ -119,7 +122,13 @@ function showCustomerDetail(c){
     if(actual && !shown.includes(actual)){ shown.push(actual); rows.push(`<b>${actual}</b><span>${c[actual]||'-'}</span>`); }
   });
   keys(c).forEach(k=>{ if(!shown.includes(k)) rows.push(`<b>${k}</b><span>${c[k]||'-'}</span>`); });
-  customerInfo.innerHTML='<h3 style="margin:0 0 10px;color:var(--blue)">Party Detail</h3><div class="detailGrid">'+rows.join('')+'</div>';
+  const mobileText=val(c,['Mobile','Mobile No','Phone']);
+  const nums=getMobileNumbers(mobileText);
+  let contactBtns='';
+  if(nums.length){
+    contactBtns='<div class="actions" style="margin-top:14px">'+nums.map(n=>`<a class="btn call" href="tel:+91${n}">📞 Call ${n}</a><a class="btn whatsapp" target="_blank" href="https://wa.me/91${n}">💬 WhatsApp ${n}</a>`).join('')+'</div>';
+  }
+  customerInfo.innerHTML='<h3 style="margin:0 0 10px;color:var(--blue)">Party Detail</h3><div class="detailGrid">'+rows.join('')+'</div>'+contactBtns;
 }
 groupSelect.onchange=()=>{productPage=1;renderProducts()}; productSearch.oninput=()=>{productPage=1;renderProducts()};
 function productId(p,i){return (val(p,['Code'])||i)+'__'+i} function qtyOf(id){return order[id]?.qty||0}
