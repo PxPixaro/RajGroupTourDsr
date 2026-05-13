@@ -25,7 +25,7 @@
   <div class="grid">
     <section class="card noPrint"><h2>City Selection</h2>
       <label>City</label><select id="areaSelect"><option value="">customer.csv load ho raha hai...</option></select>
-      <div class="box" style="margin-top:12px">City select karne ke baad us City ki party Name Selection me show hogi.</div>
+      <div class="box" style="margin-top:12px">City select karne ke baad us City ki party Name Selection me show hogi.<br><br><b>customer.csv format:</b> City, Name, Address, Sales, OD, Segment, Mobile, No, Remark</div>
     </section>
 
     <section class="card noPrint"><h2>Name Selection</h2>
@@ -114,7 +114,7 @@ function getMobileNumbers(text){
   return (text||'').toString().split(/[^0-9]+/).map(x=>x.trim()).filter(x=>x.length>=10).map(x=>x.slice(-10));
 }
 function showCustomerDetail(c){
-  const preferred=['City','Area','Name','Sales','OD','Segment','Mobile','No','Remark','Address'];
+  const preferred=['City','Name','Address','Sales','OD','Segment','Mobile','No','Remark','Area'];
   const shown=[];
   const rows=[];
   preferred.forEach(label=>{
@@ -141,7 +141,7 @@ function addReason(){let r=reasonSelect.value;if(r&&!selectedReasons.includes(r)
 function addOtherReason(){let r=clean(otherReason.value);if(r&&!selectedReasons.includes(r)){selectedReasons.push('Other: '+r);otherReason.value='';renderDSR()}}
 function removeReason(i){selectedReasons.splice(i,1);renderDSR()}
 function renderDSR(){reasonTags.innerHTML=selectedReasons.map((r,i)=>`<span class="tag">${r}<button onclick="removeReason(${i})">×</button></span>`).join('');dsrReport.innerHTML=selectedReasons.length?'<ol>'+selectedReasons.map(r=>`<li>${r}</li>`).join('')+'</ol>':'No reason selected.'}
-function buildText(type='order'){let c=customers[customerSelect.value];let cname=c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'Not selected';let lines=[`RAJGROUP ${type==='order'?'ORDER':'DSR REPORT'}`,`Name: ${cname}`,`Date: ${new Date().toLocaleString('en-IN')}`]; if(type==='order'){lines.push('\nItems:');Object.values(order).forEach(o=>{let p=o.product;lines.push(`${val(p,['Code'])} - ${val(p,['Description','Product','Item'])} | Qty: ${o.qty} | Rate: ${val(p,['Rate'])}`)})} lines.push('\nReasons/Activity:'); selectedReasons.forEach(r=>lines.push('- '+r)); return lines.join('\n')}
+function buildText(type='order'){let c=customers[customerSelect.value];let cname=c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'Not selected';let lines=[`RAJGROUP ${type==='order'?'ORDER':'DSR REPORT'}`,`Name: ${cname}`,`Address: ${c?val(c,['Address','Party Address','Customer Address']):''}`,`Date: ${new Date().toLocaleString('en-IN')}`]; if(type==='order'){lines.push('\nItems:');Object.values(order).forEach(o=>{let p=o.product;lines.push(`${val(p,['Code'])} - ${val(p,['Description','Product','Item'])} | Qty: ${o.qty} | Rate: ${val(p,['Rate'])}`)})} lines.push('\nReasons/Activity:'); selectedReasons.forEach(r=>lines.push('- '+r)); return lines.join('\n')}
 
 function getSelectedCustomer(){return customers[customerSelect.value]||null}
 function getOrderItems(){return Object.values(order).map(o=>{let p=o.product;return {Group:val(p,['Group','Product Group','Brand']),Code:val(p,['Code']),Description:val(p,['Description','Product','Item']),Unit:val(p,['Unit']),Rate:val(p,['Rate']),MRP:val(p,['Mrp','MRP']),GST:val(p,['Gst','GST']),Qty:o.qty}})}
@@ -153,6 +153,7 @@ function buildDSRPayload(){
     city:c?getCity(c):'',
     customerName:c?(val(c,['Name','Customer','Party','Customer Name'])||Object.values(c)[0]):'',
     mobile:c?val(c,['Mobile','Mobile No','Phone']):'',
+    address:c?val(c,['Address','Party Address','Customer Address']):'',
     sales:c?val(c,['Sales']):'',
     od:c?val(c,['OD']):'',
     segment:c?val(c,['Segment']):'',
